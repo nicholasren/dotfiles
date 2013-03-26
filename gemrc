@@ -1,6 +1,6 @@
 --- 
 :sources: 
-- http://rubygems.org
+- http://ruby.taobao.org
 :benchmark: false
 :update_sources: true
 :backtrace: false

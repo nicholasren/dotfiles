@@ -1,8 +1,10 @@
 [user]
-	name = Ben Orenstein
-	email = ben.orenstein@gmail.com 
+	name = Nicholas Ren
+	email = nicholas85211@gmail.com 
 [alias]
 	co = checkout
+	st = status
+	ci = commit
         cleanup = !git remote prune origin && git gc && git clean -df && git stash clear
 [color]
 	diff = auto
@@ -30,4 +32,4 @@
 [rerere]
 	enabled = 1
 [github]
-	user = r00k
+	user = nicholasren
