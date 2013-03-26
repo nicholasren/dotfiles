@@ -8,11 +8,14 @@ I'm also a pretty aggressive aliaser. You might find a few you like in bash/alia
 
 == Installation
 
-  git clone git://github.com/nicholasren/dotfiles.git ~/.dotfiles
-  cd ~/.dotfiles
-  rake install
+  `git clone git://github.com/nicholasren/dotfiles.git ~/.dotfiles`
+  `cd ~/.dotfiles`
+  `rake install`
 
   Vim plugins are managed through vundle. You'll need to install vundle to get them.
 
-  git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-  Run :BundleInstall in vim.
+  `git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle`
+  Run `:BundleInstall` in vim.
+
+  ##install command-t native extension
+    `cd $HOME/.vim/bundle/Command-T/ruby/command-t/ && ruby extconf.rb && make`

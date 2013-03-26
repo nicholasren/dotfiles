@@ -23,6 +23,7 @@ Bundle 'koron/nyancat-vim'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'Townk/vim-autoclose'
 
+
 " ================
 " Ruby stuff
 " ================
@@ -372,3 +373,5 @@ if has("autocmd")
   augroup END
 
 endif " has("autocmd")
+
+colorscheme wombat256mod
