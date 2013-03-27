@@ -22,6 +22,16 @@ Bundle 'wincent/Command-T'
 Bundle 'koron/nyancat-vim'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'Townk/vim-autoclose'
+Bundle 'scrooloose/nerdtree'
+Bundle 'mileszs/ack.vim'
+
+
+" markdown support
+Bundle 'tpope/vim-markdown'
+
+" color schemes
+Bundle 'Zenburn'
+Bundle 'molokai'
 
 
 " ================
@@ -294,7 +304,7 @@ function! OpenJasmineSpecInBrowser()
   let url_fragment = substitute(filename, "spec/javascripts", "evergreen/run", "")
   let host_fragment = "http://localhost:3001/"
   let url = host_fragment . url_fragment
-  silent exec "!open ~/bin/chrome" url
+  exec "!open " url
 endfunction
 
 " set statusline+=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
