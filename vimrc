@@ -8,7 +8,6 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " My bundles
-Bundle 'ervandew/supertab'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'tpope/vim-cucumber'
@@ -24,7 +23,8 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'Townk/vim-autoclose'
 Bundle 'scrooloose/nerdtree'
 Bundle 'mileszs/ack.vim'
-
+Bundle 'better-snipmate-snippet'
+Bundle 'snipmate-snippets'
 
 " markdown support
 Bundle 'tpope/vim-markdown'
@@ -241,10 +241,10 @@ function! RunCurrentTest()
     call SetTestFile()
 
     if match(expand('%'), '\.feature$') != -1
-      call SetTestRunner("!zeus cucumber")
+      call SetTestRunner("!cucumber")
       exec g:bjo_test_runner g:bjo_test_file
     elseif match(expand('%'), '_spec\.rb$') != -1
-      call SetTestRunner("!zeus rspec")
+      call SetTestRunner("!rspec")
       exec g:bjo_test_runner g:bjo_test_file
     else
       call SetTestRunner("!ruby -Itest")
@@ -265,7 +265,7 @@ function! RunCurrentLineInTest()
     call SetTestFileWithLine()
   end
 
-  exec "!zeus rspec" g:bjo_test_file . ":" . g:bjo_test_file_line
+  exec "!rspec" g:bjo_test_file . ":" . g:bjo_test_file_line
 endfunction
 
 function! SetTestFile()
@@ -278,8 +278,6 @@ function! SetTestFileWithLine()
 endfunction
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-inoremap <Tab> <C-P>
 
 " Let's be reasonable, shall we?
 nmap k gk
