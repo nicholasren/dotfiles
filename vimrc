@@ -34,6 +34,16 @@ Bundle 'Zenburn'
 Bundle 'molokai'
 
 
+" ===============
+" look and feel
+" ===============
+if has("gui_macvim")
+    set guifont=consolas:h14
+    set relativenumber
+    set undofile
+endif
+
+
 " ================
 " Ruby stuff
 " ================
