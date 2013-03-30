@@ -6,6 +6,7 @@
 	st = status
 	ci = commit
         cleanup = !git remote prune origin && git gc && git clean -df && git stash clear
+        pr = pull --rebase
 [color]
 	diff = auto
 	status = auto
