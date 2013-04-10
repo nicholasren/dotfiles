@@ -35,8 +35,8 @@ alias rctags="rtags --vi **/*.rb"
 #alias for a li cloud server
 alias aliyun="ssh root@42.120.18.46"
 
-#alias for project_scaffold
-alias scala_prj="$HOME/myhome/project_scaffold.rb"
+#alias for scala project scaffold
+alias scala_prj="$HOME/.dotfiles/scripts/project_scaffold.rb"
 
 alias sr="cd $HOME/personal/shortrental-code"
 

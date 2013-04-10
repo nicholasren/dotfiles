@@ -25,6 +25,8 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'mileszs/ack.vim'
 Bundle 'better-snipmate-snippet'
 Bundle 'snipmate-snippets'
+Bundle 'scala.vim'
+Bundle 'Tabular'
 
 " markdown support
 Bundle 'tpope/vim-markdown'
@@ -110,6 +112,7 @@ map <Leader>vm :RVmodel<cr>
 map <Leader>vv :RVview<cr>
 map <Leader>w <C-w>w
 map <Leader>x :exec getline(".")<cr>
+map <Leader>h :noh
 
 " Edit another file in the same directory as the current file
 " uses expression to extract path from current file's path
@@ -386,6 +389,9 @@ if has("autocmd")
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
     \   exe "normal g`\"" |
     \ endif
+
+  autocmd BufNewFile,BufRead *.scala,*.sbt set filetype=scala
+  autocmd BufNewFile,BufRead *.gradle,*.groovy set filetype=groovy
 
   augroup END
 
