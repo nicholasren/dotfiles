@@ -11,7 +11,6 @@ alias aliases='vim ~/.dotfiles/zsh/aliases'
 alias ls="ls -G"
 alias ll="ls -Gl"
 alias be="bundle exec"
-alias cs="cd ~/projects/rea/consumer-search"
 alias ectags="/usr/local/bin/ctags"
 alias gitx="/Applications/Gitx.app/Contents/Resources/gitx"
 alias proxy="node ~/personal/shadowsocks-nodejs/local.js"
@@ -36,7 +35,7 @@ alias rctags="rtags --vi **/*.rb"
 alias aliyun="ssh root@42.120.18.46"
 
 #alias for scala project scaffold
-alias scala_prj="$HOME/.dotfiles/scripts/project_scaffold.rb"
+alias scala_prj="g8 typesafehub/scala-sbt"
 
 alias sr="cd $HOME/personal/shortrental-code"
 

@@ -3,15 +3,15 @@ require "fileutils"
 
 def build_file_content prj_name
   <<-EOS
-    name := \"#{prj_name}\"
+name := \"#{prj_name}\"
 
-    version := \"1.0.0\"
+version := \"1.0.0\"
 
-    scalaVersion := \"2.9.2\"
+scalaVersion := \"2.9.2\"
 
-    libraryDependencies += \"org.scalatest\" %% \"scalatest\" % \"1.8\" % \"test\"
+libraryDependencies += \"org.scalatest\" %% \"scalatest\" % \"1.8\" % \"test\"
 
-    libraryDependencies += \"junit" % "junit\" % \"4.10\" % \"test\"
+libraryDependencies += \"junit" % "junit\" % \"4.10\" % \"test\"
   EOS
 end
 
