@@ -35,9 +35,9 @@ export GRADLE_HOME=$HOME/sdks/gradle-1.5
 export PLAY_HOME=$HOME/sdks/play-2.0.4
 export GATLING_HOME=$HOME/sdks/gatling-charts-highcharts-1.4.2
 export EC2_HOME=$HOME/sdks/ec2-api-tools-1.6.6.3
-export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home
 export WKHTMLTOPDF_HOME=/Applications/wkhtmltopdf.app/Contents/MacOS
 export JITSU_HOME=/usr/local/share/npm/
+export JETTY_HOME=$HOME/personal/reinventing_wheels/jetty
 
 export PATH=~/bin:$PATH
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
@@ -55,12 +55,15 @@ export PATH=$JITSU_HOME/bin:$PATH
 export EDITOR=mvim
 export VIM_HOME=$HOME/.vim
 
+export CP_DOMAIN_ENV=development
+
 #path for X11 and gcc
 export CPPFLAGS=-I/opt/X11/include
 export CC=/usr/local/bin/gcc-4.2
 
 #java related settings
-export JAVA_OPTS="$JAVA_OPTS -Xmx2048M -XX:MaxPermSize=512m"
+export JAVA_OPTS="$JAVA_OPTS -Xmx2048M"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_21.jdk/Contents/Home"
 export JBOSS_HOME=/opt/jboss-soa-p.4.3.0/jboss-as
 
 # make ruby run faster
