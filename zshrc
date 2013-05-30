@@ -27,7 +27,6 @@ PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~%{$reset_co
 export TERM="xterm-color"
 export PATH=~/bin:$PATH
 export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$PATH
-export SCALA_HOME=$HOME/sdks/scala-2.9.2
 export MYSQL_HOME=/usr/local/mysql
 export MSPEC_HOME=$HOME/projects/mspec
 export MONGODB_HOME=$HOME/Apps/mongodb-osx-x86_64-2.0.5
@@ -41,7 +40,6 @@ export JETTY_HOME=$HOME/personal/reinventing_wheels/jetty
 
 export PATH=~/bin:$PATH
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-export PATH=$SCALA_HOME/bin:$PATH
 export PATH=$MYSQL_HOME/bin:$PATH
 export PATH=$MSPEC_HOME/bin:$PATH
 export PATH=$MONGODB_HOME/bin:$PATH
