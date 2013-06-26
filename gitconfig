@@ -9,6 +9,7 @@
         pr = pull --rebase
         l = log --graph --pretty=format:'%C(red)%h%Creset %C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=short --all
         cv = commit -v
+        ap = add -p
 [color]
 	diff = auto
 	status = auto
