@@ -43,3 +43,5 @@ alias scala_prj="ruby $HOME/.zsh/project_scaffold.rb"
 alias sr="cd $HOME/personal/shortrental-code"
 
 alias chrome="open /Applications/Google\ Chrome.app/ --args --disable-web-security"
+
+alias gmp="github-markdown-preview"
