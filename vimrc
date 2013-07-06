@@ -113,6 +113,7 @@ map <Leader>vv :RVview<cr>
 map <Leader>w <C-w>w
 map <Leader>x :exec getline(".")<cr>
 map <Leader>h :noh
+map <F3> :NERDTree<CR>
 
 " Edit another file in the same directory as the current file
 " uses expression to extract path from current file's path
@@ -397,4 +398,6 @@ if has("autocmd")
 
 endif " has("autocmd")
 
-colorscheme wombat256mod
+" colorscheme wombat256mod
+colorscheme solarized
+set background=dark

@@ -55,10 +55,6 @@ export VIM_HOME=$HOME/.vim
 
 export CP_DOMAIN_ENV=development
 
-#path for X11 and gcc
-export CPPFLAGS=-I/opt/X11/include
-export CC=/usr/local/bin/gcc-4.2
-
 #java related settings
 export JAVA_OPTS="$JAVA_OPTS -Xmx2048M"
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_21.jdk/Contents/Home"

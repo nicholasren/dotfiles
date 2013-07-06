@@ -1,5 +1,11 @@
 require 'rake'
 
+desc "install vim configuration"
+task :vim do
+  link_file "vim/"
+  link_file "vimrc"
+end
+
 desc "install the dot files into user's home directory"
 task :install do
   replace_all = false
