@@ -3,6 +3,7 @@ require 'rake'
 desc "install vim configuration"
 task :vim do
   link_file "vim"
+  vundle
   link_file "vimrc"
 end
 
@@ -54,4 +55,8 @@ end
 def link_file(file)
   puts "linking ~/.#{file}"
   system %Q{ln -s "$PWD/#{file}" "$HOME/.#{file}"}
+end
+
+def vundle
+  system "git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle"
 end
