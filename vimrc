@@ -23,10 +23,12 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'Townk/vim-autoclose'
 Bundle 'scrooloose/nerdtree'
 Bundle 'mileszs/ack.vim'
-Bundle 'better-snipmate-snippet'
-Bundle 'snipmate-snippets'
 Bundle 'scala.vim'
 Bundle 'Tabular'
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle 'vim-snipmate'
+Bundle 'UltiSnips'
 
 " markdown support
 Bundle 'tpope/vim-markdown'
@@ -393,11 +395,8 @@ if has("autocmd")
 
   autocmd BufNewFile,BufRead *.scala,*.sbt set filetype=scala
   autocmd BufNewFile,BufRead *.gradle,*.groovy set filetype=groovy
+  autocmd bufwritepost .vimrc source  ~/.vimrc
 
   augroup END
 
 endif " has("autocmd")
-
-" colorscheme wombat256mod
-colorscheme solarized
-set background=dark

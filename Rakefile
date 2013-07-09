@@ -2,7 +2,7 @@ require 'rake'
 
 desc "install vim configuration"
 task :vim do
-  link_file "vim/"
+  link_file "vim"
   link_file "vimrc"
 end
 
