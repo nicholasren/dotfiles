@@ -21,7 +21,7 @@ Bundle 'wincent/Command-T'
 Bundle 'koron/nyancat-vim'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'Townk/vim-autoclose'
-Bundle 'scrooloose/nerdtree'
+Bundle 'The-NERD-tree'
 Bundle 'mileszs/ack.vim'
 Bundle 'scala.vim'
 Bundle 'Tabular'
@@ -134,9 +134,6 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
-
-" control-z close buffer
-map <C-z> :bd<CR>
 
 " leader r to execute ruby script
 nnoremap <leader>r :w<CR>:! ruby %<CR>

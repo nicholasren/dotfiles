@@ -45,3 +45,5 @@ alias sr="cd $HOME/personal/shortrental-code"
 alias chrome="open -a Google\ Chrome"
 
 alias gmp="github-markdown-preview"
+
+alias shell01="ssh 'rxiaojun@shell01.eqx.realestate.com.au'"

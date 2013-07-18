@@ -37,6 +37,7 @@ export EC2_HOME=$HOME/sdks/ec2-api-tools-1.6.6.3
 export WKHTMLTOPDF_HOME=/Applications/wkhtmltopdf.app/Contents/MacOS
 export JITSU_HOME=/usr/local/share/npm/
 export JETTY_HOME=$HOME/personal/reinventing_wheels/jetty
+export FIREFOX_HOME=/Applications/firefoxs/Firefox.app/Contents/MacOS
 
 export PATH=~/bin:$PATH
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
@@ -49,6 +50,7 @@ export PATH=$GATLING_HOME:$PATH
 export PATH=$EC2_HOME/bin:$PATH
 export PATH=$WKHTMLTOPDF_HOME:$PATH
 export PATH=$JITSU_HOME/bin:$PATH
+export PATH=$FIREFOX_HOME:$PATH
 
 export EDITOR=mvim
 export VIM_HOME=$HOME/.vim
