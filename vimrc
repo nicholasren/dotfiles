@@ -116,6 +116,7 @@ map <Leader>w <C-w>w
 map <Leader>x :exec getline(".")<cr>
 map <Leader>h :noh
 map <F3> :NERDTree<CR>
+map <F4> :NERDTreeFind<CR>
 
 " Edit another file in the same directory as the current file
 " uses expression to extract path from current file's path

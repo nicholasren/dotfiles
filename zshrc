@@ -75,9 +75,10 @@ export CATALINA_BASE=$CATALINA_HOME
 #scala option
 export SBT_OPTS=-XX:MaxPermSize=256m
 
-# Load RVM function
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# rbenv settings
+export RBENV_ROOT=/usr/local/var/rbenv
+# load rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # Load NVM function
 [[ -s "$HOME/.nvm/nvm.sh" ]] && . "$HOME/.nvm/nvm.sh"
