@@ -1,5 +1,6 @@
 require 'rake'
 
+
 desc "install vim configuration"
 task :vim do
   link_file "vim"
@@ -40,10 +41,6 @@ task :install do
   system %Q{rm "$HOME/.ssh/id_dsa.pub"}
   system %Q{ln -s "$PWD/id_dsa.pub" "$HOME/.ssh/id_dsa.pub"}
 
-  # Need to do this to make vim use RVM's ruby version
-  puts "Moving zshenv to zshrc"
-  system %Q{sudo mv /etc/zshenv /etc/zshrc}
-
   system %Q{mkdir ~/.tmp}
 end
 
@@ -58,5 +55,6 @@ def link_file(file)
 end
 
 def vundle
-  system "git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle"
+  vundle_home = ".vim/bundle/vundle"
+  system "git clone https://github.com/gmarik/vundle.git #{vundle_home}" unless File.exists?(File.join(ENV['HOME'], vundle_home))
 end

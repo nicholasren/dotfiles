@@ -23,7 +23,7 @@ alias slabs="cd $HOME/projects/rea/studio/studio-labs"
 alias sdev="cd $HOME/projects/rea/studio/studio-dev"
 
 # alias of vim
-alias vc="rm -rf $VIM_HOME/tmp/*"
+alias vc="rm -rf $HOME/.tmp/*"
 
 #alias of rake
 alias rake='noglob rake'
