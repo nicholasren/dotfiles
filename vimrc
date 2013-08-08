@@ -1,248 +1,34 @@
-" ========================================================================
-" Vundle stuff
-" ========================================================================
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" Let Vundle manage Vundle (required)!
-Bundle 'gmarik/vundle'
-
-" My bundles
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'tomtom/tcomment_vim'
-Bundle 'tpope/vim-cucumber'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'koron/nyancat-vim'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'Townk/vim-autoclose'
-Bundle 'The-NERD-tree'
-Bundle 'mileszs/ack.vim'
-Bundle 'scala.vim'
-Bundle 'Tabular'
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle 'vim-snipmate'
-Bundle 'UltiSnips'
-Bundle 'ctrlp.vim'
-
-" markdown support
-Bundle 'tpope/vim-markdown'
-
-" color schemes
-Bundle 'Zenburn'
-Bundle 'molokai'
-
-
-" ===============
-" look and feel
-" ===============
-if has("gui_macvim")
-    set guifont=consolas:h14
-    set relativenumber
-    set undofile
-endif
-
-colorscheme molokai
-
-" ================
-" Ruby stuff
-" ================
-syntax on                 " Enable syntax highlighting
-filetype plugin indent on " Enable filetype-specific indenting and plugins
-
-augroup myfiletypes
-  " Clear old autocmds in group
-  autocmd!
-  " autoindent with two spaces, always expand tabs
-  autocmd FileType ruby,yaml set ai sw=2 sts=2 et
-augroup END
-" ================
-
-let mapleader = ","
-
-map <Leader>bb :!bundle install<cr>
-nmap <Leader>bi :source ~/.vimrc<cr>:BundleInstall<cr>
-map <Leader>cc :!cucumber --drb %<CR>
-map <Leader>cu :Tabularize /\|<CR>
-map <Leader>co ggVG"*y
-map <Leader>cc :Rjcollection client/
-map <Leader>cj :Rjspec client/
-map <Leader>cm :Rjmodel client/
-map <Leader>ct :Rtemplate client/
-map <Leader>cv :Rjview client/
-map <Leader>gac :Gcommit -m -a ""<LEFT>
-map <Leader>gc :Gcommit -m ""<LEFT>
-map <Leader>gs :Gstatus<CR>
-map <Leader>gw :!git add . && git commit -m 'WIP' && git push<cr>
-map <Leader>f :call OpenFactoryFile()<CR>
-map <Leader>i mmgg=G`m<CR>
-map <Leader>m :Rmodel 
-map <Leader>o :call RunCurrentLineInTest()<CR>
-map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
-map <Leader>ra :%s/
-map <Leader>rd :!bundle exec rspec % --format documentation<CR>
-map <Leader>rs :vsp <C-r>#<cr><C-w>w
-map <Leader>rt q:?!ruby<cr><cr>
-map <Leader>rw :%s/\s\+$//<cr>:w<cr>
-map <Leader>sc :sp db/schema.rb<cr>
-map <Leader>sg :sp<cr>:grep 
-map <Leader>sj :call OpenJasmineSpecInBrowser()<cr>
-map <Leader>sm :RSmodel 
-map <Leader>sp yss<p>
-map <Leader>sn :e ~/.vim/snippets/ruby.snippets<CR>
-map <Leader>so :so %<cr>
-map <Leader>sq j<c-v>}klllcs<esc>:wq<cr>
-map <Leader>ss ds)i <esc>:w<cr>
-map <Leader>st :!ruby -Itest % -n "//"<left><left>
-map <Leader>su :RSunittest 
-map <Leader>sv :RSview 
-map <Leader>y :!rspec --drb %<cr>
-map <Leader>u :Runittest<cr>
-map <Leader>vc :RVcontroller<cr>
-map <Leader>vf :RVfunctional<cr>
-map <Leader>vg :vsp<cr>:grep 
-map <Leader>vi :tabe ~/.vimrc<CR>
-map <Leader>vu :RVunittest<CR>
-map <Leader>vm :RVmodel<cr>
-map <Leader>vv :RVview<cr>
-map <Leader>w <C-w>w
-map <Leader>x :exec getline(".")<cr>
-map <Leader>h :noh<CR>
-map <F3> :NERDTree<CR>
-map <F4> :NERDTreeFind<CR>
-
-" Edit another file in the same directory as the current file
-" uses expression to extract path from current file's path
-map <Leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
-map <Leader>s :split <C-R>=expand("%:p:h") . '/'<CR>
-
-map <C-s> <esc>:w<CR>
-imap <C-s> <esc>:w<CR>
-map <C-t> <esc>:tabnew<CR>
-map <C-x> <C-w>c
-map <C-n> :cn<CR>
-map <C-p> :cp<CR>
-
-" control-j/k/h/l move to split up/down/left/right
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
-
-" leader r to execute ruby script
-nnoremap <leader>r :w<CR>:! ruby %<CR>
-
-" Emacs-like beginning and end of line.
-imap <c-e> <c-o>$
-imap <c-a> <c-o>^
-
-"make < > shifts keep selection
-vnoremap < <gv
-vnoremap > >gv
-
-set nocompatible
-set backspace=indent,eol,start " allow backspacing over everything in insert mode
-set history=500		" keep 500 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
-set autoindent
-set showmatch
-set nowrap
-set backupdir=~/.tmp
-set directory=~/.tmp " Don't clutter my dirs up with swp and tmp files
-set autoread
-set wmh=0
-set viminfo+=!
-set guioptions-=T
-"set guifont=Triskweline_10:h10
-set et
-set sw=2
-set smarttab
-set noincsearch
-set ignorecase smartcase
-set laststatus=2  " Always show status line.
-set number 
-set gdefault " assume the /g flag on :s substitutions to replace all matches in a line
-set autoindent " always set autoindenting on
-set bg=light
-
-" Set the tag file search order
-set tags=./tags;
-
-" Use _ as a word-separator
-" set iskeyword-=_
-
-" Use Ack instead of grep
-set grepprg=ack
-
-" Get rid of the delay when hitting esc!
-set noesckeys
-
-" Make the omnicomplete text readable
-:highlight PmenuSel ctermfg=black
-
-" Fuzzy finder: ignore stuff that can't be opened, and generated files
-let g:fuzzy_ignore = "*.png;*.PNG;*.JPG;*.jpg;*.GIF;*.gif;vendor/**;coverage/**;tmp/**;rdoc/**"
-
-" Highlight the status line
-highlight StatusLine ctermfg=blue ctermbg=yellow
-
-" Format xml files
-au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null" 
-
-set shiftround " When at 3 spaces and I hit >>, go to 4, not 5.
-
-set nofoldenable " Say no to code folding...
-
-command! Q q " Bind :Q to :q
-command! Qall qall 
-
-
-" Disable Ex mode
-map Q <Nop>
-
-" Disable K looking stuff up
-map K <Nop>
-
-" When loading text files, wrap them and don't split up words.
-au BufNewFile,BufRead *.txt setlocal wrap 
-au BufNewFile,BufRead *.txt setlocal lbr
-
-" Better? completion on command line
-set wildmenu
-" What to do when I press 'wildchar'. Worth tweaking to see what feels right.
-set wildmode=list:full
-
-" (Hopefully) removes the delay when hitting esc in insert mode
-set noesckeys
-set ttimeout
-set ttimeoutlen=1
-
-" Turn on spell-checking in markdown and text.
-" au BufRead,BufNewFile *.md,*.txt setlocal spell
-
-" Merge a tab into a split in the previous window
-function! MergeTabs()
-  if tabpagenr() == 1
-    return
-  endif
-  let bufferName = bufname("%")
-  if tabpagenr("$") == tabpagenr()
-    close!
-  else
-    close!
-    tabprev
-  endif
-  split
-  execute "buffer " . bufferName
+function! InitJavaScript()
+  autocmd FileType javascript set tabstop=2
 endfunction
 
-nmap <C-W>u :call MergeTabs()<CR>
+function! InitMarkdown()
+  autocmd BufNewFile,BufRead *.md setf markdown
+endfunction
+
+function! s:align()
+  let p = '^\s*|\s.*\s|\s*$'
+  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+    Tabularize/|/l1
+    normal! 0
+    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+  endif
+endfunction
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" RENAME CURRENT FILE (thanks Gary Bernhardt)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! RenameFile()
+    let old_name = expand('%')
+    let new_name = input('New file name: ', expand('%'), 'file')
+    if new_name != '' && new_name != old_name
+        exec ':saveas ' . new_name
+        exec ':silent !rm ' . old_name
+        redraw!
+    endif
+endfunction
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Test-running stuff
@@ -291,31 +77,139 @@ endfunction
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+
+" ========================================================================
+" Vundle stuff
+" ========================================================================
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+Bundle 'L9'
+Bundle 'mattn/zencoding-vim'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'tomtom/tcomment_vim'
+Bundle 'tpope/vim-cucumber'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'koron/nyancat-vim'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'Townk/vim-autoclose'
+Bundle 'The-NERD-tree'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'mileszs/ack.vim'
+Bundle 'scala.vim'
+Bundle 'Tabular'
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle 'vim-snipmate'
+Bundle 'UltiSnips'
+Bundle 'ctrlp.vim'
+Bundle 'tpope/vim-markdown'
+Bundle 'molokai'
+
+call InitJavaScript()
+call InitMarkdown()
+
+" ===============
+" look and feel
+" ===============
+colorscheme molokai
+if has("gui_macvim")
+    set guifont=consolas:h14
+    set relativenumber
+    set undofile
+endif
+
+"===================
+" mappings
+"===================
+
+let mapleader = ","
+
+map <Leader>bb :!bundle install<cr>
+map <Leader>cu :Tabularize /\|<CR>
+map <Leader>gs :Gstatus<CR>
+map <Leader>o :call RunCurrentLineInTest()<CR>
+map <Leader>rd :!bundle exec rspec % --format documentation<CR>
+map <Leader>vi :tabe ~/.vimrc<CR>
+map <Leader>w <C-w>w
+map <Leader>h :noh<CR>
+map <Leader>n :call RenameFile()<cr>
+map <Leader>s :NERDTreeFind<CR>
+map <Leader>, :NERDTreeToggle<CR>
+map <Leader>/  <plug>NERDCommenterToggle<cr>
+map <leader>+ <c-w>+
+map <leader>- <c-w>-
+map <leader>= <c-w>=
+map <leader>_ <c-w>_
+nnoremap <leader>r :w<CR>:! ruby %<CR>  
+
+map <C-s> <esc>:w<CR>
+imap <C-s> <esc>:w<CR>
+map <C-t> <esc>:tabnew<CR>
+map <C-x> <C-w>c
+map <C-n> :cn<CR>
+map <C-p> :cp<CR>
+
+" make < > shifts keep selection
+vnoremap < <gv
+vnoremap > >gv 
+
 " Let's be reasonable, shall we?
 nmap k gk
 nmap j gj
 
 
-" Set up some useful Rails.vim bindings for working with Backbone.js
-autocmd User Rails Rnavcommand template    app/assets/templates               -glob=**/*  -suffix=.jst.ejs
-autocmd User Rails Rnavcommand jmodel      app/assets/javascripts/models      -glob=**/*  -suffix=.coffee
-autocmd User Rails Rnavcommand jview       app/assets/javascripts/views       -glob=**/*  -suffix=.coffee
-autocmd User Rails Rnavcommand jcollection app/assets/javascripts/collections -glob=**/*  -suffix=.coffee
-autocmd User Rails Rnavcommand jrouter     app/assets/javascripts/routers     -glob=**/*  -suffix=.coffee
-autocmd User Rails Rnavcommand jspec       spec/javascripts                   -glob=**/*  -suffix=.coffee
+inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 
-" Don't add the comment prefix when I hit enter or o/O on a comment line.
-set formatoptions-=or
+" ============
+" settings
+" ============
+set nocompatible
+set backspace=indent,eol,start " allow backspacing over everything in insert mode
+set history=500		" keep 500 lines of command line history
+set ruler		" show the cursor position all the time
+set showcmd		" display incomplete commands
+set autoindent
+set showmatch
+set nowrap
+set backupdir=~/.tmp
+set directory=~/.tmp " Don't clutter my dirs up with swp and tmp files
+set autoread
+set wmh=0
+set viminfo+=!
+set guioptions-=T
+set et
+set sw=2
+set smarttab
+set noincsearch
+set ignorecase smartcase
+set laststatus=2  " Always show status line.
+set number 
+set gdefault " assume the /g flag on :s substitutions to replace all matches in a line
+set autoindent " always set autoindenting on
+set tags=./tags; " Set the tag file search order
+set grepprg=ack " Use Ack instead of grep
+set noesckeys " Get rid of the delay when hitting esc!
+let g:fuzzy_ignore = "*.png;*.PNG;*.JPG;*.jpg;*.GIF;*.gif;vendor/**;coverage/**;tmp/**;rdoc/**" " Fuzzy finder: ignore stuff that can't be opened, and generated files
+set shiftround " When at 3 spaces and I hit >>, go to 4, not 5.
+set hlsearch
+syntax on                 " Enable syntax highlighting
+filetype plugin indent on
 
+" Better? completion on command line
+set wildmenu
+" What to do when I press 'wildchar'. Worth tweaking to see what feels right.
+set wildmode=list:full
 
-function! OpenJasmineSpecInBrowser()
-  let filename = expand('%')
-  "                  substitute(exprsson, pattern,            substitution,    flags)
-  let url_fragment = substitute(filename, "spec/javascripts", "evergreen/run", "")
-  let host_fragment = "http://localhost:3001/"
-  let url = host_fragment . url_fragment
-  exec "!open " url
-endfunction
+" (Hopefully) removes the delay when hitting esc in insert mode
+set noesckeys
+set ttimeout
+set ttimeoutlen=1
 
 " Don't wait so long for the next keypress (particularly in ambigious Leader
 " situations.
@@ -324,55 +218,16 @@ set timeoutlen=500
 " Remove trailing whitespace on save for ruby files.
 au BufWritePre *.rb :%s/\s\+$//e
 
-function! OpenFactoryFile()
-  if filereadable("test/factories.rb")
-    execute ":sp test/factories.rb"
-  else
-    execute ":sp spec/factories.rb"
-  end
-endfunction
 
-" Set gutter background to black
-highlight SignColumn ctermbg=black
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" RENAME CURRENT FILE (thanks Gary Bernhardt)
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! RenameFile()
-    let old_name = expand('%')
-    let new_name = input('New file name: ', expand('%'), 'file')
-    if new_name != '' && new_name != old_name
-        exec ':saveas ' . new_name
-        exec ':silent !rm ' . old_name
-        redraw!
-    endif
-endfunction
-map <Leader>n :call RenameFile()<cr>
-
-" ========================================================================
-" End of things set by me.
-" ========================================================================
-
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if &t_Co > 2 || has("gui_running")
-  syntax on
-  set hlsearch
-endif
-
-" Only do this part when compiled with support for autocommands.
+"===============
+" auto commands
+"===============
 if has("autocmd")
-
   " Enable file type detection.
   " Use the default filetype settings, so that mail gets 'tw' set to 72,
   " 'cindent' is on in C files, etc.
   " Also load indent files, to automatically do language-dependent indenting.
-  filetype plugin indent on
-
-  " Put these in an autocmd group, so that we can delete them easily.
-  augroup vimrcEx
-  au!
-
   " For all text files set 'textwidth' to 78 characters.
   autocmd FileType text setlocal textwidth=78
 
@@ -387,7 +242,5 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.scala,*.sbt set filetype=scala
   autocmd BufNewFile,BufRead *.gradle,*.groovy set filetype=groovy
   autocmd bufwritepost .vimrc source  ~/.vimrc
-
-  augroup END
-
+  autocmd FileType ruby,yaml set ai sw=2 sts=2 et
 endif " has("autocmd")
