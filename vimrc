@@ -47,6 +47,9 @@ if has("gui_macvim")
     set undofile
 endif
 
+colorscheme solarized
+
+set columns=500
 
 " ================
 " Ruby stuff
@@ -111,7 +114,7 @@ map <Leader>vm :RVmodel<cr>
 map <Leader>vv :RVview<cr>
 map <Leader>w <C-w>w
 map <Leader>x :exec getline(".")<cr>
-map <Leader>h :noh
+map <Leader>h :noh<CR>
 map <F3> :NERDTree<CR>
 map <F4> :NERDTreeFind<CR>
 
@@ -158,7 +161,7 @@ set autoread
 set wmh=0
 set viminfo+=!
 set guioptions-=T
-set guifont=Triskweline_10:h10
+"set guifont=Triskweline_10:h10
 set et
 set sw=2
 set smarttab
@@ -390,3 +393,4 @@ if has("autocmd")
   augroup END
 
 endif " has("autocmd")
+set background=dark
