@@ -47,9 +47,7 @@ if has("gui_macvim")
     set undofile
 endif
 
-colorscheme solarized
-
-set columns=500
+colorscheme molokai
 
 " ================
 " Ruby stuff
@@ -393,4 +391,3 @@ if has("autocmd")
   augroup END
 
 endif " has("autocmd")
-set background=dark
