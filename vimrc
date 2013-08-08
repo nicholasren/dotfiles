@@ -17,7 +17,6 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'wincent/Command-T'
 Bundle 'koron/nyancat-vim'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'Townk/vim-autoclose'
@@ -29,6 +28,7 @@ Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle 'vim-snipmate'
 Bundle 'UltiSnips'
+Bundle 'ctrlp.vim'
 
 " markdown support
 Bundle 'tpope/vim-markdown'
@@ -79,15 +79,12 @@ map <Leader>gc :Gcommit -m ""<LEFT>
 map <Leader>gs :Gstatus<CR>
 map <Leader>gw :!git add . && git commit -m 'WIP' && git push<cr>
 map <Leader>f :call OpenFactoryFile()<CR>
-map <Leader>t :CommandT<CR>
 map <Leader>i mmgg=G`m<CR>
-map <Leader>j :CommandT app/assets/javascripts<cr>client/
 map <Leader>m :Rmodel 
 map <Leader>o :call RunCurrentLineInTest()<CR>
 map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
 map <Leader>ra :%s/
 map <Leader>rd :!bundle exec rspec % --format documentation<CR>
-map <Leader>rf :CommandTFlush<CR>:CommandT<CR>
 map <Leader>rs :vsp <C-r>#<cr><C-w>w
 map <Leader>rt q:?!ruby<cr><cr>
 map <Leader>rw :%s/\s\+$//<cr>:w<cr>
@@ -318,11 +315,6 @@ function! OpenJasmineSpecInBrowser()
   let url = host_fragment . url_fragment
   exec "!open " url
 endfunction
-
-" set statusline+=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
-
-let g:CommandTMaxHeight=50
-let g:CommandTMatchWindowAtTop=1
 
 " Don't wait so long for the next keypress (particularly in ambigious Leader
 " situations.

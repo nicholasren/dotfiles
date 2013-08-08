@@ -38,6 +38,9 @@ export WKHTMLTOPDF_HOME=/Applications/wkhtmltopdf.app/Contents/MacOS
 export JITSU_HOME=/usr/local/share/npm/
 export JETTY_HOME=$HOME/personal/reinventing_wheels/jetty
 export FIREFOX_HOME=/Applications/firefoxs/Firefox.app/Contents/MacOS
+export VERTX_HOME=$HOME/sdks/vert.x-2.0.0-final
+export SCALA_HOME=/usr/local/Cellar/scala/2.10.1
+export SPARK_HOME=$HOME/sdks/spark-0.7.3
 
 export PATH=~/bin:$PATH
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
@@ -51,6 +54,9 @@ export PATH=$EC2_HOME/bin:$PATH
 export PATH=$WKHTMLTOPDF_HOME:$PATH
 export PATH=$JITSU_HOME/bin:$PATH
 export PATH=$FIREFOX_HOME:$PATH
+export PATH=$VERTX_HOME/bin:$PATH
+export PATH=$SPARK_HOME/bin:$PATH
+export PATH=$HOME/bin:$PATH
 
 export EDITOR=mvim
 export VIM_HOME=$HOME/.vim
@@ -67,10 +73,6 @@ export RUBY_HEAP_MIN_SLOTS=500000
 export RUBY_HEAP_SLOTS_INCREMENT=250000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_GC_MALLOC_LIMIT=50000000
-
-#tomcat related settings
-export CATALINA_HOME=${HOME}/Apps/tomcat/6.0.35
-export CATALINA_BASE=$CATALINA_HOME
 
 #scala option
 export SBT_OPTS=-XX:MaxPermSize=256m
