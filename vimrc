@@ -85,7 +85,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'L9'
-Bundle 'mattn/zencoding-vim'
+Bundle 'ZenCoding.vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'tpope/vim-cucumber'
@@ -105,7 +105,6 @@ Bundle 'scala.vim'
 Bundle 'Tabular'
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
-Bundle 'vim-snipmate'
 Bundle 'UltiSnips'
 Bundle 'ctrlp.vim'
 Bundle 'tpope/vim-markdown'
@@ -117,7 +116,8 @@ call InitMarkdown()
 " ===============
 " look and feel
 " ===============
-colorscheme molokai
+colorscheme solarized
+set background=dark
 if has("gui_macvim")
     set guifont=consolas:h14
     set relativenumber
@@ -218,27 +218,32 @@ set timeoutlen=500
 " Remove trailing whitespace on save for ruby files.
 au BufWritePre *.rb :%s/\s\+$//e
 
+" ctrlp stuff
+let g:ctrlp_cmd = 'CtrlPMRU'
+let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_user_command = {
+ \ 'types': {
+	 \ 1: ['.git/', 'cd %s && git ls-files'],
+	 \ },
+ \ 'fallback': 'find %s -type f'
+ \ }
+
+" zen-coding settings
+let g:user_zen_expandabbr_key = '<c-e>'
+imap <C-Space> <C-e>
+let g:use_zen_complete_tag = 1
+let g:user_zen_settings = {
+  \  'haml' : {
+  \    'filters' : 'haml',
+  \  }
+  \}
 
 
 "===============
 " auto commands
 "===============
 if has("autocmd")
-  " Enable file type detection.
-  " Use the default filetype settings, so that mail gets 'tw' set to 72,
-  " 'cindent' is on in C files, etc.
-  " Also load indent files, to automatically do language-dependent indenting.
-  " For all text files set 'textwidth' to 78 characters.
   autocmd FileType text setlocal textwidth=78
-
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  " (happens when dropping a file on gvim).
-  autocmd BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal g`\"" |
-    \ endif
-
   autocmd BufNewFile,BufRead *.scala,*.sbt set filetype=scala
   autocmd BufNewFile,BufRead *.gradle,*.groovy set filetype=groovy
   autocmd bufwritepost .vimrc source  ~/.vimrc
