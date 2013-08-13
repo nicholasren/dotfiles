@@ -47,3 +47,8 @@ alias chrome="open -a Google\ Chrome"
 alias gmp="github-markdown-preview"
 
 alias shell01="ssh 'rxiaojun@shell01.eqx.realestate.com.au'"
+alias iche="cd $HOME/personal/iche/avalon"
+
+
+alias jboss_start="$JBOSS_HOME/bin/run.sh -c default -b 0.0.0.0"
+alias jboss_stop="$JBOSS_HOME/bin/shutdown.sh --shutdown -u admin -p admin"

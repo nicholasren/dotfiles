@@ -136,17 +136,15 @@ map <Leader>gs :Gstatus<CR>
 map <Leader>o :call RunCurrentLineInTest()<CR>
 map <Leader>rd :!bundle exec rspec % --format documentation<CR>
 map <Leader>vi :tabe ~/.vimrc<CR>
-map <Leader>w <C-w>w
 map <Leader>h :noh<CR>
 map <Leader>n :call RenameFile()<cr>
-map <Leader>s :NERDTreeFind<CR>
-map <Leader>, :NERDTreeToggle<CR>
+map <Leader>, :NERDTreeFind<CR>
 map <Leader>/  <plug>NERDCommenterToggle<cr>
 map <leader>+ <c-w>+
 map <leader>- <c-w>-
 map <leader>= <c-w>=
 map <leader>_ <c-w>_
-nnoremap <leader>r :w<CR>:! ruby %<CR>  
+nnoremap <leader>r :w<CR>:! ruby %<CR>
 
 map <C-s> <esc>:w<CR>
 imap <C-s> <esc>:w<CR>
@@ -157,7 +155,7 @@ map <C-p> :cp<CR>
 
 " make < > shifts keep selection
 vnoremap < <gv
-vnoremap > >gv 
+vnoremap > >gv
 
 " Let's be reasonable, shall we?
 nmap k gk
@@ -171,9 +169,9 @@ inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 " ============
 set nocompatible
 set backspace=indent,eol,start " allow backspacing over everything in insert mode
-set history=500		" keep 500 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
+set history=500                "keep 500 lines of command line history
+set ruler                      "show the cursor position all the time
+set showcmd                    "display incomplete commands
 set autoindent
 set showmatch
 set nowrap
@@ -189,15 +187,18 @@ set smarttab
 set noincsearch
 set ignorecase smartcase
 set laststatus=2  " Always show status line.
-set number 
+set number
 set gdefault " assume the /g flag on :s substitutions to replace all matches in a line
 set autoindent " always set autoindenting on
 set tags=./tags; " Set the tag file search order
 set grepprg=ack " Use Ack instead of grep
 set noesckeys " Get rid of the delay when hitting esc!
-let g:fuzzy_ignore = "*.png;*.PNG;*.JPG;*.jpg;*.GIF;*.gif;vendor/**;coverage/**;tmp/**;rdoc/**" " Fuzzy finder: ignore stuff that can't be opened, and generated files
 set shiftround " When at 3 spaces and I hit >>, go to 4, not 5.
 set hlsearch
+set list
+set listchars=tab:=»,trail:·
+let g:fuzzy_ignore = "*.png;*.PNG;*.JPG;*.jpg;*.GIF;*.gif;vendor/**;coverage/**;tmp/**;rdoc/**" " Fuzzy finder: ignore stuff that can't be opened, and generated files
+
 syntax on                 " Enable syntax highlighting
 filetype plugin indent on
 
@@ -223,8 +224,8 @@ let g:ctrlp_cmd = 'CtrlPMRU'
 let g:ctrlp_match_window_reversed = 0
 let g:ctrlp_user_command = {
  \ 'types': {
-	 \ 1: ['.git/', 'cd %s && git ls-files'],
-	 \ },
+         \ 1: ['.git/', 'cd %s && git ls-files'],
+         \ },
  \ 'fallback': 'find %s -type f'
  \ }
 
@@ -248,4 +249,4 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.gradle,*.groovy set filetype=groovy
   autocmd bufwritepost .vimrc source  ~/.vimrc
   autocmd FileType ruby,yaml set ai sw=2 sts=2 et
-endif " has("autocmd")
+endif

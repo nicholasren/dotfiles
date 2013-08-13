@@ -41,6 +41,7 @@ export FIREFOX_HOME=/Applications/firefoxs/Firefox.app/Contents/MacOS
 export VERTX_HOME=$HOME/sdks/vert.x-2.0.0-final
 export SCALA_HOME=/usr/local/Cellar/scala/2.10.1
 export SPARK_HOME=$HOME/sdks/spark-0.7.3
+export EMR_HOME=$HOME/sdks/elastic-mapreduce-cli
 
 export PATH=~/bin:$PATH
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
@@ -56,6 +57,7 @@ export PATH=$JITSU_HOME/bin:$PATH
 export PATH=$FIREFOX_HOME:$PATH
 export PATH=$VERTX_HOME/bin:$PATH
 export PATH=$SPARK_HOME/bin:$PATH
+export PATH=$EMR_HOME:$PATH
 export PATH=$HOME/bin:$PATH
 
 export EDITOR=mvim
