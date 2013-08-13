@@ -52,3 +52,4 @@ alias iche="cd $HOME/personal/iche/avalon"
 
 alias jboss_start="$JBOSS_HOME/bin/run.sh -c default -b 0.0.0.0"
 alias jboss_stop="$JBOSS_HOME/bin/shutdown.sh --shutdown -u admin -p admin"
+alias vi="vim"

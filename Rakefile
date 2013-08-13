@@ -13,7 +13,7 @@ task :install do
   replace_all = false
   Dir['*'].each do |file|
     next if %w[Rakefile README LICENSE id_dsa.pub].include? file
-    
+
     if File.exist?(File.join(ENV['HOME'], ".#{file}"))
       if replace_all
         replace_file(file)
@@ -57,4 +57,5 @@ end
 def vundle
   vundle_home = ".vim/bundle/vundle"
   system "git clone https://github.com/gmarik/vundle.git #{vundle_home}" unless File.exists?(File.join(ENV['HOME'], vundle_home))
+  system "vim +BundleInstall +qall"
 end

@@ -161,8 +161,11 @@ vnoremap > >gv
 nmap k gk
 nmap j gj
 
-
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+
+"Yankstack plugin
+nmap <leader>o <Plug>yankstack_substitute_older_paste
+nmap <leader>i <Plug>yankstack_substitute_newer_paste
 
 " ============
 " settings
