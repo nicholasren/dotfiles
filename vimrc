@@ -151,7 +151,7 @@ imap <C-s> <esc>:w<CR>
 map <C-t> <esc>:tabnew<CR>
 map <C-x> <C-w>c
 map <C-n> :cn<CR>
-map <C-p> :cp<CR>
+map <C-w> <C-w>w
 
 " make < > shifts keep selection
 vnoremap < <gv

@@ -21,7 +21,7 @@ RPROMPT=$'$(vcs_info_wrapper)'
 
 #color and promot
 autoload -U colors && colors
-PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~%{$reset_color%} → "
+PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%M %{$fg[yellow]%}%~%{$reset_color%} → "
 
 #PATH configure section
 export TERM="xterm-color"
@@ -64,6 +64,9 @@ export EDITOR=mvim
 export VIM_HOME=$HOME/.vim
 
 export CP_DOMAIN_ENV=development
+
+
+
 
 #java related settings
 export JAVA_OPTS="$JAVA_OPTS -Xmx2048M"
