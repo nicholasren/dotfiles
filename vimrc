@@ -149,9 +149,8 @@ nnoremap <leader>r :w<CR>:! ruby %<CR>
 map <C-s> <esc>:w<CR>
 imap <C-s> <esc>:w<CR>
 map <C-t> <esc>:tabnew<CR>
-map <C-x> <C-w>c
-map <C-n> :cn<CR>
-map <C-w> <C-w>w
+map <C-w> <C-w>w<CR>
+
 
 " make < > shifts keep selection
 vnoremap < <gv
@@ -250,6 +249,7 @@ if has("autocmd")
   autocmd FileType text setlocal textwidth=78
   autocmd BufNewFile,BufRead *.scala,*.sbt set filetype=scala
   autocmd BufNewFile,BufRead *.gradle,*.groovy set filetype=groovy
+  autocmd BufNewFile,BufRead *_spec.rb set filetype=ruby.rspec
   autocmd bufwritepost .vimrc source  ~/.vimrc
   autocmd FileType ruby,yaml set ai sw=2 sts=2 et
 endif
