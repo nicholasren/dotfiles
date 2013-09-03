@@ -13,14 +13,9 @@ alias ll="ls -Gl"
 alias be="bundle exec"
 alias ectags="/usr/local/bin/ctags"
 alias gitx="/Applications/Gitx.app/Contents/Resources/gitx"
-alias proxy="node ~/personal/shadowsocks-nodejs/local.js"
-alias gs="git status"
 
-# alias to cp-agentadmin
-alias oc="cd ~/projects/rea/cp-agentadmin"
-alias ocd="cd ~/projects/rea/cp-domain"
-alias slabs="cd $HOME/projects/rea/studio/studio-labs"
-alias sdev="cd $HOME/projects/rea/studio/studio-dev"
+# alias to mycommercial api
+alias oc="cd $HOME/projects/rea-group/mycommercial-api"
 
 # alias of vim
 alias vc="rm -rf $HOME/.tmp/*"
@@ -53,3 +48,4 @@ alias iche="cd $HOME/personal/iche/avalon"
 alias jboss_start="$JBOSS_HOME/bin/run.sh -c default -b 0.0.0.0"
 alias jboss_stop="$JBOSS_HOME/bin/shutdown.sh --shutdown -u admin -p admin"
 alias vi="vim"
+alias gs="git st"

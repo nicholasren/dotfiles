@@ -109,6 +109,8 @@ Bundle 'UltiSnips'
 Bundle 'ctrlp.vim'
 Bundle 'tpope/vim-markdown'
 Bundle 'molokai'
+Bundle 'ecomba/vim-ruby-refactoring'
+Bundle 'edsono/vim-matchit'
 
 call InitJavaScript()
 call InitMarkdown()
@@ -134,6 +136,7 @@ map <Leader>bb :!bundle install<cr>
 map <Leader>cu :Tabularize /\|<CR>
 map <Leader>gs :Gstatus<CR>
 map <Leader>o :call RunCurrentLineInTest()<CR>
+map <Leader>t :call RunCurrentTest()<CR>
 map <Leader>rd :!bundle exec rspec % --format documentation<CR>
 map <Leader>vi :tabe ~/.vimrc<CR>
 map <Leader>h :noh<CR>
@@ -149,8 +152,12 @@ nnoremap <leader>r :w<CR>:! ruby %<CR>
 map <C-s> <esc>:w<CR>
 imap <C-s> <esc>:w<CR>
 map <C-t> <esc>:tabnew<CR>
-map <C-w> <C-w>w<CR>
 
+" control-j/k/h/l move to the split up/down/left/right
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
 
 " make < > shifts keep selection
 vnoremap < <gv
@@ -160,11 +167,21 @@ vnoremap > >gv
 nmap k gk
 nmap j gj
 
+" auto align cucumber table
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 
-"Yankstack plugin
-nmap <leader>o <Plug>yankstack_substitute_older_paste
-nmap <leader>i <Plug>yankstack_substitute_newer_paste
+" ruby refactor
+map <leader>ap  :RAddParameter<cr>
+map <leader>cpc :RConvertPostConditional<cr>
+map <leader>el  :RExtractLet<cr>
+map <leader>ec  :RExtractConstant<cr>
+map <leader>elv :RExtractLocalVariable<cr>
+map <leader>it  :RInlineTemp<cr>
+map <leader>rl :RRenameLocalVariable<cr>
+map <leader>ri :RRenameInstanceVariable<cr>
+map <leader>em :RExtractMethod<cr>
+
+map <Leader>d orequire 'ruby-debug'; debugger<esc>
 
 " ============
 " settings
@@ -200,6 +217,8 @@ set hlsearch
 set list
 set listchars=tab:=»,trail:·
 let g:fuzzy_ignore = "*.png;*.PNG;*.JPG;*.jpg;*.GIF;*.gif;vendor/**;coverage/**;tmp/**;rdoc/**" " Fuzzy finder: ignore stuff that can't be opened, and generated files
+set nofoldenable
+set clipboard=unnamedplus " yank and paste with the system clipboard
 
 syntax on                 " Enable syntax highlighting
 filetype plugin indent on
@@ -251,5 +270,5 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.gradle,*.groovy set filetype=groovy
   autocmd BufNewFile,BufRead *_spec.rb set filetype=ruby.rspec
   autocmd bufwritepost .vimrc source  ~/.vimrc
-  autocmd FileType ruby,yaml set ai sw=2 sts=2 et
+  autocmd FileType ruby,yaml set ai sw=2 sts=2 foldmethod=indent
 endif
