@@ -111,6 +111,7 @@ Bundle 'tpope/vim-markdown'
 Bundle 'molokai'
 Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'edsono/vim-matchit'
+Bundle 'Yggdroot/indentLine'
 
 call InitJavaScript()
 call InitMarkdown()
@@ -125,6 +126,9 @@ if has("gui_macvim")
     set relativenumber
     set undofile
 endif
+let g:indentLine_noConcealCursor = 1
+let g:indentLine_color_term = 0
+let g:indentLine_char = '¦'
 
 "===================
 " mappings
@@ -218,7 +222,6 @@ set list
 set listchars=tab:=»,trail:·
 let g:fuzzy_ignore = "*.png;*.PNG;*.JPG;*.jpg;*.GIF;*.gif;vendor/**;coverage/**;tmp/**;rdoc/**" " Fuzzy finder: ignore stuff that can't be opened, and generated files
 set nofoldenable
-set clipboard=unnamedplus " yank and paste with the system clipboard
 
 syntax on                 " Enable syntax highlighting
 filetype plugin indent on
