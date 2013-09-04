@@ -136,21 +136,16 @@ let g:indentLine_char = '¦'
 
 let mapleader = ","
 
-map <Leader>bb :!bundle install<cr>
 map <Leader>cu :Tabularize /\|<CR>
 map <Leader>gs :Gstatus<CR>
 map <Leader>o :call RunCurrentLineInTest()<CR>
 map <Leader>t :call RunCurrentTest()<CR>
-map <Leader>rd :!bundle exec rspec % --format documentation<CR>
 map <Leader>vi :tabe ~/.vimrc<CR>
 map <Leader>h :noh<CR>
 map <Leader>n :call RenameFile()<cr>
 map <Leader>, :NERDTreeFind<CR>
 map <Leader>/  <plug>NERDCommenterToggle<cr>
-map <leader>+ <c-w>+
-map <leader>- <c-w>-
-map <leader>= <c-w>=
-map <leader>_ <c-w>_
+nmap <leader>a :Ack 
 nnoremap <leader>r :w<CR>:! ruby %<CR>
 
 map <C-s> <esc>:w<CR>
@@ -240,29 +235,21 @@ set ttimeoutlen=1
 " situations.
 set timeoutlen=500
 
-" Remove trailing whitespace on save for ruby files.
-au BufWritePre *.rb :%s/\s\+$//e
 
 " ctrlp stuff
 let g:ctrlp_cmd = 'CtrlPMRU'
 let g:ctrlp_match_window_reversed = 0
-let g:ctrlp_user_command = {
- \ 'types': {
-         \ 1: ['.git/', 'cd %s && git ls-files'],
-         \ },
- \ 'fallback': 'find %s -type f'
- \ }
 
-" zen-coding settings
-let g:user_zen_expandabbr_key = '<c-e>'
-imap <C-Space> <C-e>
-let g:use_zen_complete_tag = 1
-let g:user_zen_settings = {
-  \  'haml' : {
-  \    'filters' : 'haml',
-  \  }
-  \}
+" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+if executable('ag')
+  let g:ackprg = 'ag --nogroup --column'
 
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
 
 "===============
 " auto commands
@@ -274,4 +261,6 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *_spec.rb set filetype=ruby.rspec
   autocmd bufwritepost .vimrc source  ~/.vimrc
   autocmd FileType ruby,yaml set ai sw=2 sts=2 foldmethod=indent
+  " Remove trailing whitespace on save for ruby files.
+  au BufWritePre *.rb :%s/\s\+$//e
 endif
