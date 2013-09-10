@@ -145,7 +145,7 @@ map <Leader>h :noh<CR>
 map <Leader>n :call RenameFile()<cr>
 map <Leader>, :NERDTreeFind<CR>
 map <Leader>/  <plug>NERDCommenterToggle<cr>
-nmap <leader>a :Ack 
+nmap <leader>a :Ack
 nnoremap <leader>r :w<CR>:! ruby %<CR>
 
 map <C-s> <esc>:w<CR>
@@ -234,6 +234,7 @@ set ttimeoutlen=1
 " Don't wait so long for the next keypress (particularly in ambigious Leader
 " situations.
 set timeoutlen=500
+xnoremap p pgvy
 
 
 " ctrlp stuff
@@ -261,6 +262,6 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *_spec.rb set filetype=ruby.rspec
   autocmd bufwritepost .vimrc source  ~/.vimrc
   autocmd FileType ruby,yaml set ai sw=2 sts=2 foldmethod=indent
-  " Remove trailing whitespace on save for ruby files.
-  au BufWritePre *.rb :%s/\s\+$//e
+  " Remove trailing whitespace on save for ruby, scala, coffee files.
+  au BufWritePre *.rb,*.scala,*.coffee :%s/\s\+$//e
 endif

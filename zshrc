@@ -17,6 +17,12 @@ vcs_info_wrapper() {
   fi
 }
 
+
+#chrome
+chrome () {
+  /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome $* 2>&1 &
+}
+
 RPROMPT=$'$(vcs_info_wrapper)'
 
 #color and promot

@@ -16,6 +16,7 @@ alias gitx="/Applications/Gitx.app/Contents/Resources/gitx"
 
 # alias to mycommercial api
 alias oc="cd $HOME/projects/rea-group/mycommercial-api"
+alias ocd="cd $HOME/projects/rea-group/mycommercial-deploy"
 
 # alias of vim
 alias vc="rm -rf $HOME/.tmp/*"
@@ -37,8 +38,6 @@ alias scala_prj="ruby $HOME/.dotfiles/scripts/project_scaffold.rb"
 
 alias sr="cd $HOME/personal/shortrental-code"
 
-alias chrome="open -a Google\ Chrome"
-
 alias gmp="github-markdown-preview"
 
 alias shell01="ssh 'rxiaojun@shell01.eqx.realestate.com.au'"
@@ -49,3 +48,9 @@ alias jboss_start="$JBOSS_HOME/bin/run.sh -c default -b 0.0.0.0"
 alias jboss_stop="$JBOSS_HOME/bin/shutdown.sh --shutdown -u admin -p admin"
 alias vi="vim"
 alias gs="git st"
+
+
+#alias for network proxy
+alias proxy_on="networksetup -setsocksfirewallproxystate Wi-Fi on"
+alias proxy_off="networksetup -setsocksfirewallproxystate Wi-Fi off"
+alias proxy_status="networksetup -getsocksfirewallproxy Wi-Fi"
