@@ -54,3 +54,7 @@ alias gs="git st"
 alias proxy_on="networksetup -setsocksfirewallproxystate Wi-Fi on"
 alias proxy_off="networksetup -setsocksfirewallproxystate Wi-Fi off"
 alias proxy_status="networksetup -getsocksfirewallproxy Wi-Fi"
+
+
+#node js
+alias nw="/Applications/node-webkit.app/Contents/MacOS/node-webkit"

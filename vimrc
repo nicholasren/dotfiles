@@ -147,10 +147,11 @@ map <Leader>, :NERDTreeFind<CR>
 map <Leader>/  <plug>NERDCommenterToggle<cr>
 nmap <leader>a :Ack
 nnoremap <leader>r :w<CR>:! ruby %<CR>
+" copy the file path to buffer
+map <silent> <Leader>c :let @+ = expand("%")<cr>
 
 map <C-s> <esc>:w<CR>
 imap <C-s> <esc>:w<CR>
-map <C-t> <esc>:tabnew<CR>
 
 " control-j/k/h/l move to the split up/down/left/right
 map <C-j> <C-W>j
@@ -179,8 +180,8 @@ map <leader>it  :RInlineTemp<cr>
 map <leader>rl :RRenameLocalVariable<cr>
 map <leader>ri :RRenameInstanceVariable<cr>
 map <leader>em :RExtractMethod<cr>
-
 map <Leader>d orequire 'ruby-debug'; debugger<esc>
+inoremap jk <esc>
 
 " ============
 " settings
@@ -217,6 +218,7 @@ set list
 set listchars=tab:=»,trail:·
 let g:fuzzy_ignore = "*.png;*.PNG;*.JPG;*.jpg;*.GIF;*.gif;vendor/**;coverage/**;tmp/**;rdoc/**" " Fuzzy finder: ignore stuff that can't be opened, and generated files
 set nofoldenable
+set autowriteall
 
 syntax on                 " Enable syntax highlighting
 filetype plugin indent on
@@ -264,4 +266,5 @@ if has("autocmd")
   autocmd FileType ruby,yaml set ai sw=2 sts=2 foldmethod=indent
   " Remove trailing whitespace on save for ruby, scala, coffee files.
   au BufWritePre *.rb,*.scala,*.coffee :%s/\s\+$//e
+  au FocusLost * :wa
 endif

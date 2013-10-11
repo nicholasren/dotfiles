@@ -98,3 +98,6 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # Source my custom files
 source $HOME/.dotfiles/zsh/aliases
+
+
+export REA_LDAP_USER=rxiaojun
