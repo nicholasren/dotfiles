@@ -101,3 +101,7 @@ source $HOME/.dotfiles/zsh/aliases
 
 
 export REA_LDAP_USER=rxiaojun
+export API_DOMAIN=rca
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
