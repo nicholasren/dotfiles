@@ -119,13 +119,13 @@ call InitMarkdown()
 " ===============
 " look and feel
 " ===============
-colorscheme solarized
-set background=dark
 if has("gui_macvim")
     set guifont=consolas:h14
     set relativenumber
     set undofile
 endif
+set background=dark
+colorscheme solarized
 let g:indentLine_noConcealCursor = 1
 let g:indentLine_color_term = 0
 let g:indentLine_char = '¦'
