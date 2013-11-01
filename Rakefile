@@ -3,8 +3,8 @@ require 'rake'
 
 desc "install vim configuration"
 task :vim do
-  backup 'vim'
-  backup 'vimrc'
+  backup_file 'vim'
+  backup_file 'vimrc'
   link_file "vim"
   link_file "vimrc"
   vundle
@@ -62,7 +62,7 @@ def backup_file(file)
 end
 
 def vundle
-  vundle_home = ".vim/bundle/vundle"
+  vundle_home = "~/.vim/bundle/vundle"
   system "git clone https://github.com/gmarik/vundle.git #{vundle_home}" unless File.exists?(File.join(ENV['HOME'], vundle_home))
   system "vim +BundleInstall +qall"
 end
