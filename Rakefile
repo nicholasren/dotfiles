@@ -3,9 +3,11 @@ require 'rake'
 
 desc "install vim configuration"
 task :vim do
+  backup 'vim'
+  backup 'vimrc'
   link_file "vim"
-  vundle
   link_file "vimrc"
+  vundle
 end
 
 desc "install the dot files into user's home directory"
@@ -52,6 +54,11 @@ end
 def link_file(file)
   puts "linking ~/.#{file}"
   system %Q{ln -s "$PWD/#{file}" "$HOME/.#{file}"}
+end
+
+def backup_file(file)
+  puts "backuping file ~/.#{file}"
+  system "[-f ~/.#{file}] && mv -i ~/.#{file}{,.bak}"
 end
 
 def vundle
