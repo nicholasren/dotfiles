@@ -58,7 +58,7 @@ end
 
 def backup_file(file)
   puts "backuping file ~/.#{file}"
-  system "[-f ~/.#{file}] && mv -i ~/.#{file}{,.bak}"
+  system "[ -f ~/.#{file} ] && mv -i ~/.#{file}{,.bak}"
 end
 
 def vundle
