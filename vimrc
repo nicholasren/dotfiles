@@ -85,11 +85,10 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'L9'
-Bundle 'ZenCoding.vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'tpope/vim-cucumber'
-Bundle 'tpope/vim-fugitive'
+Bundle 'fugitive.vim'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-rails'
@@ -105,13 +104,16 @@ Bundle 'scala.vim'
 Bundle 'Tabular'
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
-Bundle 'UltiSnips'
 Bundle 'ctrlp.vim'
 Bundle 'tpope/vim-markdown'
 Bundle 'molokai'
 Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'edsono/vim-matchit'
 Bundle 'Yggdroot/indentLine'
+Bundle 'rizzatti/funcoo.vim'
+Bundle 'rizzatti/dash.vim'
+Bundle 'SirVer/ultisnips'
+Bundle 'honza/vim-snippets'
 
 call InitJavaScript()
 call InitMarkdown()
@@ -120,7 +122,7 @@ call InitMarkdown()
 " look and feel
 " ===============
 if has("gui_macvim")
-    set guifont=consolas:h14
+    set guifont=consolas:h16
     set relativenumber
     set undofile
 endif
@@ -129,6 +131,14 @@ colorscheme solarized
 let g:indentLine_noConcealCursor = 1
 let g:indentLine_color_term = 0
 let g:indentLine_char = '¦'
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
 
 "===================
 " mappings
@@ -141,11 +151,12 @@ map <Leader>gs :Gstatus<CR>
 map <Leader>o :call RunCurrentLineInTest()<CR>
 map <Leader>t :call RunCurrentTest()<CR>
 map <Leader>vi :tabe ~/.vimrc<CR>
-map <Leader>h :noh<CR>
 map <Leader>n :call RenameFile()<cr>
 map <Leader>, :NERDTreeFind<CR>
 map <Leader>/  <plug>NERDCommenterToggle<cr>
 nmap <leader>a :Ack
+map <Leader>h :noh<cr>
+map <Leader>d :Dash<cr>
 nnoremap <leader>r :w<CR>:! ruby %<CR>
 " copy the file path to buffer
 map <silent> <Leader>c :let @+ = expand("%")<cr>
@@ -180,7 +191,7 @@ map <leader>it  :RInlineTemp<cr>
 map <leader>rl :RRenameLocalVariable<cr>
 map <leader>ri :RRenameInstanceVariable<cr>
 map <leader>em :RExtractMethod<cr>
-map <Leader>d orequire 'ruby-debug'; debugger<esc>
+map <Leader>dd orequire 'ruby-debug'; debugger<esc>
 inoremap jk <esc>
 
 " ============

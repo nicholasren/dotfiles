@@ -11,12 +11,13 @@ alias aliases='vim ~/.dotfiles/zsh/aliases'
 alias ls="ls -G"
 alias ll="ls -Gl"
 alias be="bundle exec"
-alias ectags="/usr/local/bin/ctags"
 alias gitx="/Applications/Gitx.app/Contents/Resources/gitx"
 
-# alias to mycommercial api
-alias oc="cd $HOME/projects/rea-group/mycommercial-api"
-alias ocd="cd $HOME/projects/rea-group/mycommercial-deploy"
+# alias of change directory quickly
+alias oc="cd $HOME/projects/rea-group/mycommercial/api"
+alias ocd="cd $HOME/projects/rea-group/mycommercial/deploy"
+alias cs="cd $HOME/projects/rea-group/consumer-search"
+alias sc="cd /Users/twer/personal/scala_cookbooks"
 
 # alias of vim
 alias vc="rm -rf $HOME/.tmp/*"
@@ -51,10 +52,10 @@ alias gs="git st"
 
 
 #alias for network proxy
-alias proxy_on="networksetup -setsocksfirewallproxystate Wi-Fi on"
-alias proxy_off="networksetup -setsocksfirewallproxystate Wi-Fi off"
-alias proxy_status="networksetup -getsocksfirewallproxy Wi-Fi"
+alias proxy="python /Users/twer/sdks/goagent-goagent-6287469/local/proxy.py"
 
 
 #node js
 alias nw="/Applications/node-webkit.app/Contents/MacOS/node-webkit"
+
+

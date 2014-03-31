@@ -8,6 +8,7 @@ task :vim do
   link_file "vim"
   link_file "vimrc"
   vundle
+  create_vim_tmp_dir
 end
 
 desc "install the dot files into user's home directory"
@@ -65,4 +66,10 @@ def vundle
   vundle_home = "~/.vim/bundle/vundle"
   system "git clone https://github.com/gmarik/vundle.git #{vundle_home}" unless File.exists?(File.join(ENV['HOME'], vundle_home))
   system "vim +BundleInstall +qall"
+end
+
+def create_vim_tmp_dir
+  unless File.exists?("~/.tmp")
+    system "mkdir ~/.tmp"
+  end
 end

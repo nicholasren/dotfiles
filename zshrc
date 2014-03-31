@@ -45,9 +45,11 @@ export JITSU_HOME=/usr/local/share/npm/
 export JETTY_HOME=$HOME/personal/reinventing_wheels/jetty
 export FIREFOX_HOME=/Applications/firefoxs/Firefox.app/Contents/MacOS
 export VERTX_HOME=$HOME/sdks/vert.x-2.0.0-final
-export SCALA_HOME=/usr/local/Cellar/scala/2.10.1
+export SCALA_HOME=$HOME/sdks/scala-2.11.0-M7
 export SPARK_HOME=$HOME/sdks/spark-0.7.3
 export EMR_HOME=$HOME/sdks/elastic-mapreduce-cli
+export JENV_HOME=$HOME/.jenv
+export HASKELL_HOME=$HOME/Library/Haskell
 
 export PATH=~/bin:$PATH
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
@@ -63,19 +65,22 @@ export PATH=$JITSU_HOME/bin:$PATH
 export PATH=$FIREFOX_HOME:$PATH
 export PATH=$VERTX_HOME/bin:$PATH
 export PATH=$SPARK_HOME/bin:$PATH
+export PATH=$SCALA_HOME/bin:$PATH
 export PATH=$EMR_HOME:$PATH
+export PATH=$JENV_HOME/bin:$PATH
+export PATH=$HASKELL_HOME/bin:$PATH
 export PATH=$HOME/bin:$PATH
+
 
 export EDITOR=mvim
 export VIM_HOME=$HOME/.vim
-
 export CP_DOMAIN_ENV=development
 
 
 
 
 #java related settings
-export JAVA_OPTS="$JAVA_OPTS -Xmx2048M"
+export JAVA_OPTS="$JAVA_OPTS -Xmx4096M -XX:MaxPermSize=512M -XX:PermSize=256M"
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_21.jdk/Contents/Home"
 export JBOSS_HOME=/opt/jboss-soa-p.4.3.0/jboss-as
 
@@ -86,12 +91,14 @@ export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_GC_MALLOC_LIMIT=50000000
 
 #scala option
-export SBT_OPTS=-XX:MaxPermSize=256m
+export SBT_OPTS="-XX:MaxPermSize=512m -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=9999"
 
 # rbenv settings
 export RBENV_ROOT=/usr/local/var/rbenv
 # load rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+# load jenv
+eval "$(jenv init -)"
 
 # Load NVM function
 [[ -s "$HOME/.nvm/nvm.sh" ]] && . "$HOME/.nvm/nvm.sh"
@@ -105,3 +112,5 @@ export API_DOMAIN=rca
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
+source $HOME/.aws/rea/gandalf.sh
