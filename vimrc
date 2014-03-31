@@ -1,4 +1,5 @@
 function! InitJavaScript()
+
   autocmd FileType javascript set tabstop=2
 endfunction
 
@@ -81,39 +82,38 @@ endfunction
 " ========================================================================
 " Vundle stuff
 " ========================================================================
+set nocompatible
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-Bundle 'gmarik/vundle'
-Bundle 'L9'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'tomtom/tcomment_vim'
-Bundle 'tpope/vim-cucumber'
-Bundle 'fugitive.vim'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'koron/nyancat-vim'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'Townk/vim-autoclose'
-Bundle 'The-NERD-tree'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'mileszs/ack.vim'
-Bundle 'scala.vim'
-Bundle 'Tabular'
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle 'ctrlp.vim'
-Bundle 'tpope/vim-markdown'
-Bundle 'molokai'
-Bundle 'ecomba/vim-ruby-refactoring'
-Bundle 'edsono/vim-matchit'
-Bundle 'Yggdroot/indentLine'
-Bundle 'rizzatti/funcoo.vim'
-Bundle 'rizzatti/dash.vim'
-Bundle 'SirVer/ultisnips'
-Bundle 'honza/vim-snippets'
+Plugin 'gmarik/vundle'
+Plugin 'L9'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'tpope/vim-cucumber'
+Plugin 'fugitive.vim'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'koron/nyancat-vim'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'Townk/vim-autoclose'
+Plugin 'The-NERD-tree'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'mileszs/ack.vim'
+Plugin 'scala.vim'
+Plugin 'Tabular'
+Plugin 'ctrlp.vim'
+Plugin 'tpope/vim-markdown'
+Plugin 'molokai'
+Plugin 'ecomba/vim-ruby-refactoring'
+Plugin 'edsono/vim-matchit'
+Plugin 'Yggdroot/indentLine'
+Plugin 'rizzatti/funcoo.vim'
+Plugin 'rizzatti/dash.vim'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
 call InitJavaScript()
 call InitMarkdown()
@@ -197,7 +197,6 @@ inoremap jk <esc>
 " ============
 " settings
 " ============
-set nocompatible
 set backspace=indent,eol,start " allow backspacing over everything in insert mode
 set history=500                "keep 500 lines of command line history
 set ruler                      "show the cursor position all the time
