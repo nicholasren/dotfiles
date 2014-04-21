@@ -14,9 +14,9 @@ alias be="bundle exec"
 alias gitx="/Applications/Gitx.app/Contents/Resources/gitx"
 
 # alias of change directory quickly
-alias oc="cd $HOME/projects/rea-group/mycommercial/api"
-alias ocd="cd $HOME/projects/rea-group/mycommercial/deploy"
-alias cs="cd $HOME/projects/rea-group/consumer-search"
+alias oc="cd $HOME/projects/rea-group/codes/mycommercial/api"
+alias ocd="cd $HOME/projects/rea-group/codes/mycommercial/deploy"
+alias cs="cd $HOME/projects/rea-group/codes/consumer-search"
 alias sc="cd /Users/twer/personal/scala_cookbooks"
 
 # alias of vim
@@ -36,6 +36,7 @@ alias vps="ssh root@209.141.52.140"
 
 #alias for scala project scaffold
 alias scala_prj="ruby $HOME/.dotfiles/scripts/project_scaffold.rb"
+alias esbt="sbt -DsocksProxyHost=127.0.0.1 -DsocksProxyPort=8087"
 
 alias sr="cd $HOME/personal/shortrental-code"
 
@@ -53,6 +54,7 @@ alias gs="git st"
 
 #alias for network proxy
 alias proxy="python /Users/twer/sdks/goagent-goagent-6287469/local/proxy.py"
+alias jdk_proxy="export JAVA_OPTS=\"$JAVA_OPTS -Dhttp.proxyHost=localhost -Dhttp.proxyPort=8087\""
 
 
 #node js

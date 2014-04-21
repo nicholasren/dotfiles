@@ -17,12 +17,6 @@ vcs_info_wrapper() {
   fi
 }
 
-
-#chrome
-chrome () {
-  /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome $* 2>&1 &
-}
-
 RPROMPT=$'$(vcs_info_wrapper)'
 
 #color and promot
@@ -75,14 +69,9 @@ export PATH=$HOME/bin:$PATH
 export EDITOR=mvim
 export VIM_HOME=$HOME/.vim
 export CP_DOMAIN_ENV=development
-
-
-
-
-#java related settings
-export JAVA_OPTS="$JAVA_OPTS -Xmx4096M -XX:MaxPermSize=512M -XX:PermSize=256M"
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_21.jdk/Contents/Home"
-export JBOSS_HOME=/opt/jboss-soa-p.4.3.0/jboss-as
+export API_DOMAIN=rca
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # make ruby run faster
 export RUBY_HEAP_MIN_SLOTS=500000
@@ -97,8 +86,13 @@ export SBT_OPTS="-XX:MaxPermSize=512m -Xdebug -Xrunjdwp:transport=dt_socket,serv
 export RBENV_ROOT=/usr/local/var/rbenv
 # load rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+
+#java related settings
 # load jenv
 eval "$(jenv init -)"
+export JAVA_OPTS="$JAVA_OPTS -Xmx4096M"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_21.jdk/Contents/Home"
 
 # Load NVM function
 [[ -s "$HOME/.nvm/nvm.sh" ]] && . "$HOME/.nvm/nvm.sh"
@@ -107,10 +101,7 @@ eval "$(jenv init -)"
 source $HOME/.dotfiles/zsh/aliases
 
 
-export REA_LDAP_USER=rxiaojun
-export API_DOMAIN=rca
 
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-
+# source aws access keys
 source $HOME/.aws/rea/gandalf.sh
+
