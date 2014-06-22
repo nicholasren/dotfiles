@@ -14,8 +14,7 @@ alias be="bundle exec"
 alias gitx="/Applications/Gitx.app/Contents/Resources/gitx"
 
 # alias of change directory quickly
-alias oc="cd $HOME/projects/rea-group/codes/mycommercial/api"
-alias ocd="cd $HOME/projects/rea-group/codes/mycommercial/deploy"
+alias oc="cd /Users/twer/projects/rea-group/codes/jetwire/jetwire-vm"
 alias cs="cd $HOME/projects/rea-group/codes/consumer-search"
 alias sc="cd /Users/twer/personal/scala_cookbooks"
 
@@ -36,7 +35,7 @@ alias vps="ssh root@209.141.52.140"
 
 #alias for scala project scaffold
 alias scala_prj="ruby $HOME/.dotfiles/scripts/project_scaffold.rb"
-alias esbt="sbt -DsocksProxyHost=127.0.0.1 -DsocksProxyPort=8087"
+alias esbt="sbt -DsocksProxyHost=127.0.0.1 -DsocksProxyPort=1080"
 
 alias sr="cd $HOME/personal/shortrental-code"
 

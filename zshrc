@@ -39,11 +39,14 @@ export JITSU_HOME=/usr/local/share/npm/
 export JETTY_HOME=$HOME/personal/reinventing_wheels/jetty
 export FIREFOX_HOME=/Applications/firefoxs/Firefox.app/Contents/MacOS
 export VERTX_HOME=$HOME/sdks/vert.x-2.0.0-final
-export SCALA_HOME=$HOME/sdks/scala-2.11.0-M7
+export SCALA_HOME=$HOME/sdks/scala-2.11.0
 export SPARK_HOME=$HOME/sdks/spark-0.7.3
 export EMR_HOME=$HOME/sdks/elastic-mapreduce-cli
 export JENV_HOME=$HOME/.jenv
 export HASKELL_HOME=$HOME/Library/Haskell
+export ANDROID_HOME=$HOME/sdks/android-sdk
+export ACTIVATOR_HOME=$HOME/sdks/activator-1.2.2
+export AKKA_HOME=$HOME/sdks/akka-2.3.3
 
 export PATH=~/bin:$PATH
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
@@ -63,7 +66,10 @@ export PATH=$SCALA_HOME/bin:$PATH
 export PATH=$EMR_HOME:$PATH
 export PATH=$JENV_HOME/bin:$PATH
 export PATH=$HASKELL_HOME/bin:$PATH
+export PATH=$ACTIVATOR_HOME:$PATH
+export PATH=$AKKA_HOME/bin:$PATH
 export PATH=$HOME/bin:$PATH
+
 
 
 export EDITOR=mvim
@@ -100,8 +106,5 @@ export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_21.jdk/Contents/Hom
 # Source my custom files
 source $HOME/.dotfiles/zsh/aliases
 
-
-
-# source aws access keys
-source $HOME/.aws/rea/gandalf.sh
-
+#autojump
+[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh ]
