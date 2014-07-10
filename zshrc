@@ -1,6 +1,7 @@
 #git promte
 setopt prompt_subst
 autoload -Uz vcs_info
+
 zstyle ':vcs_info:*' actionformats \
     '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
 zstyle ':vcs_info:*' formats       \
@@ -21,7 +22,7 @@ RPROMPT=$'$(vcs_info_wrapper)'
 
 #color and promot
 autoload -U colors && colors
-PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%M %{$fg[yellow]%}%~%{$reset_color%} → "
+PS1="%{$fg[yellow]%}%~%{$reset_color%} → "
 
 #PATH configure section
 export TERM="xterm-color"

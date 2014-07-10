@@ -11,12 +11,6 @@ alias aliases='vim ~/.dotfiles/zsh/aliases'
 alias ls="ls -G"
 alias ll="ls -Gl"
 alias be="bundle exec"
-alias gitx="/Applications/Gitx.app/Contents/Resources/gitx"
-
-# alias of change directory quickly
-alias oc="cd /Users/twer/projects/rea-group/codes/jetwire/jetwire-vm"
-alias cs="cd $HOME/projects/rea-group/codes/consumer-search"
-alias sc="cd /Users/twer/personal/scala_cookbooks"
 
 # alias of vim
 alias vc="rm -rf $HOME/.tmp/*"
@@ -27,9 +21,6 @@ alias rake='noglob rake'
 #alias for rtags
 alias rctags="rtags --vi **/*.rb"
 
-#alias for a li cloud server
-alias aliyun="ssh root@42.120.18.46"
-
 #alias for vps
 alias vps="ssh root@209.141.52.140"
 
@@ -37,30 +28,21 @@ alias vps="ssh root@209.141.52.140"
 alias scala_prj="ruby $HOME/.dotfiles/scripts/project_scaffold.rb"
 alias esbt="sbt -DsocksProxyHost=127.0.0.1 -DsocksProxyPort=1080"
 
-alias sr="cd $HOME/personal/shortrental-code"
-
-alias gmp="github-markdown-preview"
-
 alias shell01="ssh 'rxiaojun@shell01.eqx.realestate.com.au'"
 alias iche="cd $HOME/personal/iche/avalon"
 
 
-alias jboss_start="$JBOSS_HOME/bin/run.sh -c default -b 0.0.0.0"
-alias jboss_stop="$JBOSS_HOME/bin/shutdown.sh --shutdown -u admin -p admin"
 alias vi="vim"
 alias gs="git st"
-
 
 #alias for network proxy
 alias proxy="python /Users/twer/sdks/goagent-goagent-6287469/local/proxy.py"
 alias jdk_proxy="export JAVA_OPTS=\"$JAVA_OPTS -Dhttp.proxyHost=localhost -Dhttp.proxyPort=8087\""
 
-
 #node js
 alias nw="/Applications/node-webkit.app/Contents/MacOS/node-webkit"
 
-#kill all tmux session
-alias kts="tmux ls | awk '{print $1}' | sed 's/://g' | xargs -I{} tmux kill-session -t {}"
-
-
 alias use_gandalf="source ~/.aws/rea/gandalf.sh"
+alias use_preprod="source ~/.aws/rea/preprod.sh"
+alias use_prod="source ~/.aws/rea/prod.sh"
+
