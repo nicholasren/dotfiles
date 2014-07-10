@@ -114,6 +114,7 @@ Plugin 'rizzatti/funcoo.vim'
 Plugin 'rizzatti/dash.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'elzr/vim-json'
 
 call InitJavaScript()
 call InitMarkdown()

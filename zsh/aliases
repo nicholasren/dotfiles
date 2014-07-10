@@ -59,4 +59,8 @@ alias jdk_proxy="export JAVA_OPTS=\"$JAVA_OPTS -Dhttp.proxyHost=localhost -Dhttp
 #node js
 alias nw="/Applications/node-webkit.app/Contents/MacOS/node-webkit"
 
+#kill all tmux session
+alias kts="tmux ls | awk '{print $1}' | sed 's/://g' | xargs -I{} tmux kill-session -t {}"
 
+
+alias use_gandalf="source ~/.aws/rea/gandalf.sh"
