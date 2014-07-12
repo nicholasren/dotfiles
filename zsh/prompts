@@ -1,0 +1,13 @@
+function aws_env {
+  [ $AWS_ENVIRONMENT ] && echo "%{$fg[magenta]%}$AWS_ENVIRONMENT%{$reset_color%}"
+}
+
+function stack_name {
+  [ "$STACK_NAME" ] && echo "%{$fg[blue]%}$STACK_NAME%{$reset_color%}"
+}
+
+function on {
+  [ "$STACK_NAME" ] && echo "%{$fg[yellow]%} on %{$reset_color%}"
+}
+
+RPROMPT='$(stack_name)$(on)$(aws_env)'
