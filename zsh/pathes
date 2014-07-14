@@ -19,7 +19,7 @@ export EMR_HOME=$HOME/sdks/elastic-mapreduce-cli
 export JENV_HOME=$HOME/.jenv
 export HASKELL_HOME=$HOME/Library/Haskell
 export ANDROID_HOME=$HOME/sdks/android-sdk
-export ACTIVATOR_HOME=$HOME/sdks/activator-1.2.2
+export ACTIVATOR_HOME=$HOME/sdks/activator-1.2.3
 export AKKA_HOME=$HOME/sdks/akka-2.3.3
 
 export PATH=~/bin:$PATH
