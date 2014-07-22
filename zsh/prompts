@@ -1,5 +1,9 @@
 function aws_env {
-  [ $AWS_ENVIRONMENT ] && echo "%{$fg[magenta]%}$AWS_ENVIRONMENT%{$reset_color%}"
+  AWS_ENV="aws:local"
+  if [ $AWS_ENVIRONMENT ]; then
+    AWS_ENV=$AWS_ENVIRONMENT
+  fi
+  echo "%{$fg[magenta]%}$AWS_ENV%{$reset_color%}"
 }
 
 function stack_name {
@@ -10,4 +14,8 @@ function on {
   [ "$STACK_NAME" ] && echo "%{$fg[yellow]%} on %{$reset_color%}"
 }
 
-RPROMPT='$(stack_name)$(on)$(aws_env)'
+function with_key {
+  [ "$AWS_ACCESS_KEY_ID" ] && echo "%{$fg[yellow]%} \u2702%{$reset_color%}"
+}
+
+RPROMPT='$(stack_name)$(on)$(aws_env)$(with_key)'

@@ -45,4 +45,6 @@ alias nw="/Applications/node-webkit.app/Contents/MacOS/node-webkit"
 alias use_gandalf="source ~/.aws/rea/gandalf.sh"
 alias use_preprod="source ~/.aws/rea/preprod.sh"
 alias use_prod="source ~/.aws/rea/prod.sh"
+alias pg_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
+alias pg_stop="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log stop"
 
