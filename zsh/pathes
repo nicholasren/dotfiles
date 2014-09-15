@@ -43,3 +43,5 @@ export PATH=$HASKELL_HOME/bin:$PATH
 export PATH=$ACTIVATOR_HOME:$PATH
 export PATH=$AKKA_HOME/bin:$PATH
 export PATH=$HOME/bin:$PATH
+
+export AWS_CLI=/usr/local/bin/aws

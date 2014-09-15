@@ -19,3 +19,5 @@ function with_key {
 }
 
 RPROMPT='$(stack_name)$(on)$(aws_env)$(with_key)'
+
+source $HOME/projects/rea-group/codes/saml-aws-functions/bash-functions
