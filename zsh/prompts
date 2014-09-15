@@ -1,23 +1,12 @@
 function aws_env {
-  AWS_ENV="aws:local"
-  if [ $AWS_ENVIRONMENT ]; then
-    AWS_ENV=$AWS_ENVIRONMENT
-  fi
-  echo "%{$fg[magenta]%}$AWS_ENV%{$reset_color%}"
+  echo "%{$fg[magenta]%}$AWS_ROLE%{$reset_color%}"
 }
 
-function stack_name {
-  [ "$STACK_NAME" ] && echo "%{$fg[blue]%}$STACK_NAME%{$reset_color%}"
-}
-
-function on {
-  [ "$STACK_NAME" ] && echo "%{$fg[yellow]%} on %{$reset_color%}"
-}
 
 function with_key {
   [ "$AWS_ACCESS_KEY_ID" ] && echo "%{$fg[yellow]%} \u2702%{$reset_color%}"
 }
 
-RPROMPT='$(stack_name)$(on)$(aws_env)$(with_key)'
+RPROMPT='$(aws_env)$(with_key)'
 
 source $HOME/projects/rea-group/codes/saml-aws-functions/bash-functions
