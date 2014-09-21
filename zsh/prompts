@@ -1,13 +1,13 @@
 function aws_role {
-  echo "%{$fg[magenta]%}$AWS_ROLE%{$reset_color%}"
+  [ "$AWS_ROLE" ] && echo "%{$fg[cyan]%}$AWS_ROLE%{$reset_color%}"
 }
 
 function aws_env {
-  ENV_NAME="aws:local"
-  if [ $AWS_ENVIRONMENT ]; then
-    ENV_NAME=$AWS_ENVIRONMENT
-  fi
-  echo "%{$fg[magenta]%}$ENV_NAME%{$reset_color%}"
+  [ "$AWS_ENVIRONMENT" ] && echo "%{$fg[magenta]%}$AWS_ENVIRONMENT%{$reset_color%}"
+}
+
+function aws_region {
+  [ "$AWS_REGION" ] && echo "%{$fg[green]%}$AWS_REGION%{$reset_color%}"
 }
 
 
@@ -15,6 +15,6 @@ function with_key {
   [ "$AWS_ACCESS_KEY_ID" ] && echo "%{$fg[yellow]%} \u2702%{$reset_color%}"
 }
 
-RPROMPT='$(aws_role)$(aws_env)$(with_key)'
+RPROMPT='$(aws_role) $(aws_env) $(aws_region)$(with_key)'
 
 source $HOME/projects/rea-group/codes/saml-aws-functions/bash-functions
