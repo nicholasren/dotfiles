@@ -111,6 +111,7 @@ Plugin 'rizzatti/dash.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'elzr/vim-json'
+Plugin 'Valloric/YouCompleteMe'
 
 call InitJavaScript()
 call InitMarkdown()
@@ -120,9 +121,9 @@ call InitMarkdown()
 " ===============
 if has("gui_macvim")
     set guifont=consolas:h16
-    set relativenumber
     set undofile
 endif
+set number
 set background=dark
 colorscheme solarized
 let g:indentLine_noConcealCursor = 1
@@ -130,9 +131,9 @@ let g:indentLine_color_term = 0
 let g:indentLine_char = '¦'
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
@@ -213,7 +214,6 @@ set smarttab
 set noincsearch
 set ignorecase smartcase
 set laststatus=2  " Always show status line.
-set number
 set gdefault " assume the /g flag on :s substitutions to replace all matches in a line
 set autoindent " always set autoindenting on
 set tags=./tags; " Set the tag file search order
