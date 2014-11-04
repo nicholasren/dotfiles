@@ -21,6 +21,7 @@ export HASKELL_HOME=$HOME/Library/Haskell
 export ANDROID_HOME=$HOME/sdks/android-sdk
 export ACTIVATOR_HOME=$HOME/sdks/activator-1.2.3
 export AKKA_HOME=$HOME/sdks/akka-2.3.3
+export PG_SQL_HOME=/Applications/Postgres.app/Contents/Versions/9.3/
 
 export PATH=~/bin:$PATH
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
@@ -42,6 +43,7 @@ export PATH=$JENV_HOME/bin:$PATH
 export PATH=$HASKELL_HOME/bin:$PATH
 export PATH=$ACTIVATOR_HOME:$PATH
 export PATH=$AKKA_HOME/bin:$PATH
+export PATH=$PG_SQL_HOME/bin:$PATH
 export PATH=$HOME/bin:$PATH
 
 export AWS_CLI=/usr/local/bin/aws

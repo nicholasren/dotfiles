@@ -17,4 +17,10 @@ function with_key {
 
 RPROMPT='$(aws_role) $(aws_env) $(aws_region)$(with_key)'
 
+
+#federated account settings
 source $HOME/projects/rea-group/codes/saml-aws-functions/bash-functions
+
+export IDP_USER=rxiaojun
+
+export IDP_HOST=idp.realestate.com.au
