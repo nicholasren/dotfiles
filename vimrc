@@ -60,7 +60,7 @@ function! RunCurrentLineInTest()
     call SetTestFileWithLine()
   end
 
-  exec "!rspec" g:bjo_test_file . ":" . g:bjo_test_file_line
+  exec "!bundle exec rspec" g:bjo_test_file . ":" . g:bjo_test_file_line
 endfunction
 
 function! SetTestFile()

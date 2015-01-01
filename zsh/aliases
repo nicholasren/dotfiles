@@ -24,8 +24,9 @@ alias rctags="rtags --vi **/*.rb"
 #alias for vps
 alias vps="ssh root@209.141.52.140"
 
-#alias for cb
+#alias for cubieboard
 alias cb='ssh linaro@192.168.1.125'
+alias cbw='ssh linaro@nicholas-ren.xicp.net'
 
 #alias for scala project scaffold
 alias scala_prj="ruby $HOME/.dotfiles/scripts/project_scaffold.rb"
