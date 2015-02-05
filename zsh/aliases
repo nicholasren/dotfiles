@@ -52,4 +52,7 @@ alias use_prod="source ~/.aws/rea/prod.sh"
 alias sydney_region="export AWS_REGION=ap-southeast-2"
 alias pg_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 alias pg_stop="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log stop"
+alias rbi="CC=/usr/bin/gcc rbenv install"
+
+
 

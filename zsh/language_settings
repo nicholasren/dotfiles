@@ -12,9 +12,7 @@ export RBENV_ROOT=/usr/local/var/rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 #JAVA related settings
-eval "$(jenv init -)"
 export JAVA_OPTS="$JAVA_OPTS -Xmx4096M"
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_21.jdk/Contents/Home"
 
 #NODEJS related settings
 [[ -s "$HOME/.nvm/nvm.sh" ]] && . "$HOME/.nvm/nvm.sh"
