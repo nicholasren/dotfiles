@@ -60,7 +60,7 @@ function! RunCurrentLineInTest()
     call SetTestFileWithLine()
   end
 
-  exec "!bundle exec rspec" g:bjo_test_file . ":" . g:bjo_test_file_line
+  exec "!rspec" g:bjo_test_file . ":" . g:bjo_test_file_line
 endfunction
 
 function! SetTestFile()
@@ -111,7 +111,7 @@ Plugin 'rizzatti/dash.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'elzr/vim-json'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 
 call InitJavaScript()
 call InitMarkdown()
@@ -122,6 +122,7 @@ call InitMarkdown()
 if has("gui_macvim")
     set guifont=consolas:h16
     set undofile
+    set undodir=~/.vimundo
 endif
 set number
 set background=dark

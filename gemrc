@@ -1,10 +1,10 @@
 ---
 :backtrace: false
-:benchmark: false
 :bulk_threshold: 1000
 :sources:
-- http://ruby.taobao.org
-- http://rea-rubygems/
+- http://rea-rubygems.delivery.realestate.com.au/
+- https://rubygems.org
 :update_sources: true
 :verbose: true
-gem: --no-ri --no-rdoc
+benchmark: false
+gem: "--no-ri --no-rdoc"
