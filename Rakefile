@@ -5,8 +5,10 @@ desc "install vim configuration"
 task :vim do
   backup_file 'vim'
   backup_file 'vimrc'
+  backup_file 'gvimrc'
   link_file "vim"
   link_file "vimrc"
+  link_file ".gvimrc"
   vundle
   create_vim_tmp_dir
 end
