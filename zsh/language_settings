@@ -5,7 +5,6 @@ export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_GC_MALLOC_LIMIT=50000000
 
 #SCALA option
-export SBT_OPTS="-XX:MaxPermSize=512m -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=9999"
 
 # RBENV settings
 export RBENV_ROOT=/usr/local/var/rbenv
@@ -13,6 +12,10 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 #JAVA related settings
 export JAVA_OPTS="$JAVA_OPTS -Xmx4096M"
+
+#jenv
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
 
 #NODEJS related settings
 [[ -s "$HOME/.nvm/nvm.sh" ]] && . "$HOME/.nvm/nvm.sh"

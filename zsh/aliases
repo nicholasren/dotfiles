@@ -56,3 +56,6 @@ alias rbi="CC=/usr/bin/gcc rbenv install"
 
 
 
+alias d="docker"
+alias g="./gradlew"
+

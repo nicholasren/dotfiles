@@ -1,6 +1,6 @@
 [user]
 	name = REN Xiaojun
-	email = nicholas85211@gmail.com
+	email = nicholas.x.ren@gmail.com
 [alias]
 	co = checkout
 	st = status
@@ -22,6 +22,7 @@
 [core]
 	excludesfile = ~/.gitignore
 	editor = vim --noplugin
+	autocrlf = input
 [apply]
 	whitespace = nowarn
 

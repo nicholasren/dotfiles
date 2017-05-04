@@ -1,6 +1,6 @@
 #oh-my-zsh configs
 export ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="agnoster"
+ZSH_THEME=agnoster
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
@@ -17,3 +17,6 @@ export LANG=en_US.UTF-8
 
 #autojump
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh ]
+
+export NVM_DIR="/Users/nicholasren/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
