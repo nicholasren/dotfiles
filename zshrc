@@ -20,3 +20,5 @@ export LANG=en_US.UTF-8
 
 export NVM_DIR="/Users/nicholasren/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+eval $(thefuck --alias)

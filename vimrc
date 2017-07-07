@@ -1,21 +1,9 @@
 function! InitJavaScript()
-
   autocmd FileType javascript set tabstop=2
 endfunction
 
 function! InitMarkdown()
   autocmd BufNewFile,BufRead *.md setf markdown
-endfunction
-
-function! s:align()
-  let p = '^\s*|\s.*\s|\s*$'
-  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
-    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
-    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
-    Tabularize/|/l1
-    normal! 0
-    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
-  endif
 endfunction
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -30,50 +18,6 @@ function! RenameFile()
         redraw!
     endif
 endfunction
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Test-running stuff
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! RunCurrentTest()
-  let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\|_test.rb\)$') != -1
-  if in_test_file
-    call SetTestFile()
-    if match(expand('%'), '_spec\.rb$') != -1
-      call SetTestRunner("!bundle exec rspec")
-      exec g:bjo_test_runner g:bjo_test_file
-    else
-      call SetTestRunner("!ruby -Itest")
-      exec g:bjo_test_runner g:bjo_test_file
-    endif
-  else
-    exec g:bjo_test_runner g:bjo_test_file
-  endif
-endfunction
-
-function! SetTestRunner(runner)
-  let g:bjo_test_runner=a:runner
-endfunction
-
-function! RunCurrentLineInTest()
-  let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\|_test.rb\)$') != -1
-  if in_test_file
-    call SetTestFileWithLine()
-  end
-
-  exec "!rspec" g:bjo_test_file . ":" . g:bjo_test_file_line
-endfunction
-
-function! SetTestFile()
-  let g:bjo_test_file=@%
-endfunction
-
-function! SetTestFileWithLine()
-  let g:bjo_test_file=@%
-  let g:bjo_test_file_line=line(".")
-endfunction
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 
 " ========================================================================
 " Vundle stuff
@@ -114,7 +58,7 @@ call InitMarkdown()
 " look and feel
 " ===============
 if has("gui_macvim")
-    set guifont=consolas:h16
+    set guifont=Monaco:h16
     set undofile
     set undodir=~/.vimundo
 endif
@@ -139,10 +83,7 @@ let g:UltiSnipsEditSplit="vertical"
 
 let mapleader = ","
 
-map <Leader>cu :Tabularize /\|<CR>
 map <Leader>gs :Gstatus<CR>
-map <Leader>o :call RunCurrentLineInTest()<CR>
-map <Leader>t :call RunCurrentTest()<CR>
 map <Leader>vi :tabe ~/.vimrc<CR>
 map <Leader>n :call RenameFile()<cr>
 map <Leader>, :NERDTreeFind<CR>
@@ -170,22 +111,6 @@ vnoremap > >gv
 " Let's be reasonable, shall we?
 nmap k gk
 nmap j gj
-
-" auto align cucumber table
-inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
-
-" ruby refactor
-map <leader>ap  :RAddParameter<cr>
-map <leader>cpc :RConvertPostConditional<cr>
-map <leader>el  :RExtractLet<cr>
-map <leader>ec  :RExtractConstant<cr>
-map <leader>elv :RExtractLocalVariable<cr>
-map <leader>it  :RInlineTemp<cr>
-map <leader>rl :RRenameLocalVariable<cr>
-map <leader>ri :RRenameInstanceVariable<cr>
-map <leader>em :RExtractMethod<cr>
-map <Leader>dd orequire 'ruby-debug'; debugger<esc>
-inoremap jk <esc>
 
 " ============
 " settings
@@ -221,6 +146,8 @@ set listchars=tab:=»,trail:·
 let g:fuzzy_ignore = "*.png;*.PNG;*.JPG;*.jpg;*.GIF;*.gif;vendor/**;coverage/**;tmp/**;rdoc/**" " Fuzzy finder: ignore stuff that can't be opened, and generated files
 set nofoldenable
 set autowriteall
+set lines=90
+set columns=270
 
 syntax on                 " Enable syntax highlighting
 filetype plugin indent on
