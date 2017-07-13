@@ -146,8 +146,6 @@ set listchars=tab:=»,trail:·
 let g:fuzzy_ignore = "*.png;*.PNG;*.JPG;*.jpg;*.GIF;*.gif;vendor/**;coverage/**;tmp/**;rdoc/**" " Fuzzy finder: ignore stuff that can't be opened, and generated files
 set nofoldenable
 set autowriteall
-set lines=90
-set columns=270
 
 syntax on                 " Enable syntax highlighting
 filetype plugin indent on
