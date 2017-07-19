@@ -46,6 +46,9 @@ alias g="./gradlew"
 alias vc="rm -rf $HOME/.tmp/*"
 alias t="tmuxinator"
 
+#tv dashboard
+alias tv="ssh aconex@192.168.7.94"
+
 #rbenv
 status --is-interactive; and source (rbenv init -|psub)
 export EDITOR='vim'
