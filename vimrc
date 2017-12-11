@@ -24,15 +24,14 @@ endfunction
 " ========================================================================
 set nocompatible
 set rtp+=~/.vim/bundle/vundle/
+set rtp+=/usr/local/opt/fzf
+
 call vundle#rc()
 Plugin 'gmarik/vundle'
 Plugin 'L9'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'fugitive.vim'
+Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'koron/nyancat-vim'
 Plugin 'Lokaltog/vim-powerline'
@@ -41,15 +40,14 @@ Plugin 'The-NERD-tree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'mileszs/ack.vim'
 Plugin 'scala.vim'
-Plugin 'ctrlp.vim'
 Plugin 'tpope/vim-markdown'
 Plugin 'molokai'
-Plugin 'edsono/vim-matchit'
 Plugin 'Yggdroot/indentLine'
 Plugin 'rizzatti/funcoo.vim'
 Plugin 'rizzatti/dash.vim'
 Plugin 'honza/vim-snippets'
 Plugin 'elzr/vim-json'
+Plugin 'junegunn/fzf.vim'
 
 call InitJavaScript()
 call InitMarkdown()
@@ -65,18 +63,8 @@ endif
 set number
 set background=dark
 colorscheme solarized
-let g:indentLine_noConcealCursor = 1
-let g:indentLine_color_term = 0
-let g:indentLine_char = '¦'
 
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
-
+let g:fzf_tags_command = 'ctags -R'
 "===================
 " mappings
 "===================
@@ -111,6 +99,10 @@ vnoremap > >gv
 " Let's be reasonable, shall we?
 nmap k gk
 nmap j gj
+
+nmap ; :Buffers<CR>
+nmap <Leader>t :Files<CR>
+
 
 " ============
 " settings
@@ -189,9 +181,8 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.scala,*.sbt set filetype=scala
   autocmd BufNewFile,BufRead *.gradle,*.groovy set filetype=groovy
   autocmd BufNewFile,BufRead *_spec.rb set filetype=ruby.rspec
-  autocmd bufwritepost .vimrc source  ~/.vimrc
   autocmd FileType ruby,yaml set ai sw=2 sts=2 foldmethod=indent
   " Remove trailing whitespace on save for ruby, scala, coffee files.
-  au BufWritePre *.rb,*.scala,*.coffee :%s/\s\+$//e
+  au BufWritePre *.rb,*.scala,*.java :%s/\s\+$//e
   au FocusLost * :wa
 endif

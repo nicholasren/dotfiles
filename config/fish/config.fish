@@ -45,10 +45,30 @@ alias d="docker"
 alias g="./gradlew"
 alias vc="rm -rf $HOME/.tmp/*"
 alias t="tmuxinator"
+alias be="bundle exec"
 
 #tv dashboard
-alias tv="ssh aconex@192.168.7.94"
+alias tv="ssh aconex@192.168.7.74"
 
 #rbenv
 status --is-interactive; and source (rbenv init -|psub)
 export EDITOR='vim'
+
+
+#scala
+set -x SCALA_HOME ~/sdks/scala-2.12.3
+set fish_user_paths $SCALA_HOME/bin
+
+
+#haskell
+set -x LOCAL    ~/.local/
+set fish_user_paths $LOCAL/bin
+
+
+#tmuxifier
+set -x TMUXIFIER_HOME ~/.tmuxifier
+set fish_user_paths $TMUXIFIER_HOME/bin
+
+
+#jenv
+set PATH $HOME/.jenv/bin $PATH

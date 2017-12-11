@@ -15,46 +15,18 @@ alias be="bundle exec"
 # alias of vim
 alias vc="rm -rf $HOME/.tmp/*"
 
-#alias of rake
-alias rake='noglob rake'
-
 #alias for rtags
 alias rctags="rtags --vi **/*.rb"
-
-#alias for vps
-alias vps="ssh root@209.141.52.140"
 
 #alias for cubieboard
 alias cb='ssh linaro@192.168.1.125'
 alias cbw='ssh linaro@nicholas-ren.xicp.net'
 
-#alias for scala project scaffold
-alias scala_prj="ruby $HOME/.dotfiles/scripts/project_scaffold.rb"
-alias esbt="sbt -DsocksProxyHost=127.0.0.1 -DsocksProxyPort=1080"
-
-alias shell01="ssh 'rxiaojun@shell01.eqx.realestate.com.au'"
-alias iche="cd $HOME/personal/iche/avalon"
-
-
 alias vi="vim"
 alias gs="git st"
 
-#alias for network proxy
-alias proxy="python /Users/twer/sdks/goagent-goagent-6287469/local/proxy.py"
-alias jdk_proxy="export JAVA_OPTS=\"$JAVA_OPTS -Dhttp.proxyHost=localhost -Dhttp.proxyPort=8087\""
-
-#node js
-alias nw="/Applications/node-webkit.app/Contents/MacOS/node-webkit"
-
-alias use_gandalf="source ~/.aws/rea/gandalf.sh"
-alias use_preprod="source ~/.aws/rea/preprod.sh"
-alias use_prod="source ~/.aws/rea/prod.sh"
-alias sydney_region="export AWS_REGION=ap-southeast-2"
 alias pg_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 alias pg_stop="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log stop"
-alias rbi="CC=/usr/bin/gcc rbenv install"
-
-
 
 alias d="docker"
 alias g="./gradlew"

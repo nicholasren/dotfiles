@@ -7,7 +7,6 @@ source $ZSH/oh-my-zsh.sh
 # Source my custom files
 source $HOME/.dotfiles/zsh/aliases
 source $HOME/.dotfiles/zsh/pathes
-source $HOME/.dotfiles/zsh/prompts
 source $HOME/.dotfiles/zsh/language_settings
 
 export EDITOR=mvim
@@ -17,8 +16,3 @@ export LANG=en_US.UTF-8
 
 #autojump
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh ]
-
-export NVM_DIR="/Users/nicholasren/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
-eval $(thefuck --alias)

@@ -1,43 +1,8 @@
 #PATH configure section
+export HASKELL_HOME=$HOME/Library/Haskell
+export PG_SQL_HOME=/Applications/Postgres.app/Contents/Versions/9.3
+
 export PATH=~/bin:$PATH
 export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$PATH
-export MYSQL_HOME=/usr/local/mysql
-export MSPEC_HOME=$HOME/projects/mspec
-export MONGODB_HOME=$HOME/Apps/mongodb-osx-x86_64-2.0.5
-export EC2_HOME=$HOME/sdks/ec2-api-tools-1.6.6.3
-export WKHTMLTOPDF_HOME=/Applications/wkhtmltopdf.app/Contents/MacOS
-export JITSU_HOME=/usr/local/share/npm/
-export JETTY_HOME=$HOME/personal/reinventing_wheels/jetty
-export FIREFOX_HOME=/Applications/firefoxs/Firefox.app/Contents/MacOS
-export VERTX_HOME=$HOME/sdks/vert.x-2.0.0-final
-export SCALA_HOME=$HOME/sdks/scala-2.12.1
-export SPARK_HOME=$HOME/sdks/spark-0.7.3
-export EMR_HOME=$HOME/sdks/elastic-mapreduce-cli
-export HASKELL_HOME=$HOME/Library/Haskell
-export ANDROID_HOME=$HOME/sdks/android-sdk
-export ACTIVATOR_HOME=$HOME/sdks/activator-1.2.10
-export AKKA_HOME=$HOME/sdks/akka-2.3.3
-export PG_SQL_HOME=/Applications/Postgres.app/Contents/Versions/9.3
-export PHANTOMJS_HOME=/Users/nicholasren/sdks/phantomjs-2.1.1-macosx
-
-export PATH=~/bin:$PATH
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-export PATH=$MYSQL_HOME/bin:$PATH
-export PATH=$MSPEC_HOME/bin:$PATH
-export PATH=$MONGODB_HOME/bin:$PATH
-export PATH=$EC2_HOME/bin:$PATH
-export PATH=$WKHTMLTOPDF_HOME:$PATH
-export PATH=$JITSU_HOME/bin:$PATH
-export PATH=$FIREFOX_HOME:$PATH
-export PATH=$VERTX_HOME/bin:$PATH
-export PATH=$SPARK_HOME/bin:$PATH
-export PATH=$SCALA_HOME/bin:$PATH
-export PATH=$EMR_HOME:$PATH
 export PATH=$HASKELL_HOME/bin:$PATH
-export PATH=$ACTIVATOR_HOME:$PATH
-export PATH=$AKKA_HOME/bin:$PATH
 export PATH=$PG_SQL_HOME/bin:$PATH
-export PATH=$HOME/bin:$PATH
-export PATH=$PHANTOMJS_HOME/bin:$PATH
-
-export AWS_CLI=/usr/local/bin/aws
