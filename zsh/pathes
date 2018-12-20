@@ -1,8 +1,17 @@
 #PATH configure section
 export HASKELL_HOME=$HOME/Library/Haskell
 export PG_SQL_HOME=/Applications/Postgres.app/Contents/Versions/9.3
+export PYTHON_HOME=$HOME/Library/Python/2.7/
+export GO_HOME=/usr/local/go/
+export TGENV_HOME=$HOME/.tgenv/
+export BLUEPRINT_HOME=$HOME/dev/blueprint-generator
 
 export PATH=~/bin:$PATH
 export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$PATH
 export PATH=$HASKELL_HOME/bin:$PATH
 export PATH=$PG_SQL_HOME/bin:$PATH
+export PATH=$PYTHON_HOME/bin:$PATH
+export PATH=$GO_HOME/bin:$PATH
+export PATH=$TGENV_HOME/bin:$PATH
+export PATH=$BLUEPRINT_HOME/bin:$PATH
+export PATH=$HOME/bin:$PATH

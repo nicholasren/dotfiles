@@ -1,4 +1,5 @@
 function! InitJavaScript()
+
   autocmd FileType javascript set tabstop=2
 endfunction
 
@@ -31,15 +32,12 @@ Plugin 'gmarik/vundle'
 Plugin 'L9'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'koron/nyancat-vim'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'Townk/vim-autoclose'
 Plugin 'The-NERD-tree'
-Plugin 'scrooloose/nerdcommenter'
 Plugin 'mileszs/ack.vim'
-Plugin 'scala.vim'
 Plugin 'tpope/vim-markdown'
 Plugin 'molokai'
 Plugin 'Yggdroot/indentLine'
@@ -47,7 +45,9 @@ Plugin 'rizzatti/funcoo.vim'
 Plugin 'rizzatti/dash.vim'
 Plugin 'honza/vim-snippets'
 Plugin 'elzr/vim-json'
+Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
+"Plugin 'ctrlpvim/ctrlp.vim'
 
 call InitJavaScript()
 call InitMarkdown()
@@ -72,19 +72,21 @@ let g:fzf_tags_command = 'ctags -R'
 let mapleader = ","
 
 map <Leader>gs :Gstatus<CR>
+map <Leader>f :Files<CR>
 map <Leader>vi :tabe ~/.vimrc<CR>
 map <Leader>n :call RenameFile()<cr>
 map <Leader>, :NERDTreeFind<CR>
 map <Leader>/  <plug>NERDCommenterToggle<cr>
 nmap <leader>a :Ack
 map <Leader>h :noh<cr>
-map <Leader>d :Dash<cr>
 nnoremap <leader>r :w<CR>:! ruby %<CR>
 " copy the file path to buffer
 map <silent> <Leader>c :let @+ = expand("%")<cr>
 
 map <C-s> <esc>:w<CR>
 imap <C-s> <esc>:w<CR>
+
+map <Leader>w vi"
 
 " control-j/k/h/l move to the split up/down/left/right
 map <C-j> <C-W>j
@@ -100,8 +102,9 @@ vnoremap > >gv
 nmap k gk
 nmap j gj
 
-nmap ; :Buffers<CR>
-nmap <Leader>t :Files<CR>
+" resize window
+nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 
 
 " ============
@@ -157,11 +160,6 @@ set ttimeoutlen=1
 set timeoutlen=500
 xnoremap p pgvy
 
-
-" ctrlp stuff
-let g:ctrlp_cmd = 'CtrlPMRU'
-let g:ctrlp_match_window_reversed = 0
-
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
   let g:ackprg = 'ag --nogroup --column'
@@ -172,6 +170,9 @@ if executable('ag')
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
+
+" terraform
+let g:terraform_fold_sections=1
 
 "===============
 " auto commands
@@ -185,4 +186,5 @@ if has("autocmd")
   " Remove trailing whitespace on save for ruby, scala, coffee files.
   au BufWritePre *.rb,*.scala,*.java :%s/\s\+$//e
   au FocusLost * :wa
+  au FileType puppet setlocal isk+=:
 endif

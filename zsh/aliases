@@ -13,7 +13,7 @@ alias ll="ls -Gl"
 alias be="bundle exec"
 
 # alias of vim
-alias vc="rm -rf $HOME/.tmp/*"
+alias vc="rm -rf $HOME/.tmp/*.*"
 
 #alias for rtags
 alias rctags="rtags --vi **/*.rb"

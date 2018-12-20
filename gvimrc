@@ -1,5 +1,5 @@
 colorscheme solarized
-set background=light
+set background=dark
 
 " enable Ctrl-C/Ctrl-V on ubuntu
 vmap <C-c> "+y

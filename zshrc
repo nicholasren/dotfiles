@@ -1,6 +1,6 @@
 #oh-my-zsh configs
 export ZSH=$HOME/.oh-my-zsh
-ZSH_THEME=agnoster
+ZSH_THEME=muse
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
@@ -16,3 +16,8 @@ export LANG=en_US.UTF-8
 
 #autojump
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh ]
+
+source $HOME/.bin/tmuxinator.zsh
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
