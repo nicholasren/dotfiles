@@ -1,31 +1,8 @@
-function! InitJavaScript()
-
-  autocmd FileType javascript set tabstop=2
-endfunction
-
-function! InitMarkdown()
-  autocmd BufNewFile,BufRead *.md setf markdown
-endfunction
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" RENAME CURRENT FILE (thanks Gary Bernhardt)
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! RenameFile()
-    let old_name = expand('%')
-    let new_name = input('New file name: ', expand('%'), 'file')
-    if new_name != '' && new_name != old_name
-        exec ':saveas ' . new_name
-        exec ':silent !rm ' . old_name
-        redraw!
-    endif
-endfunction
-
 " ========================================================================
 " Vundle stuff
 " ========================================================================
 set nocompatible
 set rtp+=~/.vim/bundle/vundle/
-set rtp+=/usr/local/opt/fzf
 
 call vundle#rc()
 Plugin 'gmarik/vundle'
@@ -34,7 +11,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'koron/nyancat-vim'
-Plugin 'Lokaltog/vim-powerline'
+Plugin 'itchyny/lightline.vim'
+
 Plugin 'Townk/vim-autoclose'
 Plugin 'The-NERD-tree'
 Plugin 'mileszs/ack.vim'
@@ -42,29 +20,32 @@ Plugin 'tpope/vim-markdown'
 Plugin 'molokai'
 Plugin 'Yggdroot/indentLine'
 Plugin 'rizzatti/funcoo.vim'
-Plugin 'rizzatti/dash.vim'
 Plugin 'honza/vim-snippets'
 Plugin 'elzr/vim-json'
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
-"Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'airblade/vim-gitgutter'
 
-call InitJavaScript()
-call InitMarkdown()
+" file finder
+Plugin 'ctrlpvim/ctrlp.vim'
+
+"vim-syntastic
+"auto-format
+"thinca/vim-quickrun
+"junegunn/vim-easy-align
+"t9md/vim-quickhl
+
 
 " ===============
 " look and feel
 " ===============
+set number
+colorscheme solarized
+set background=light
 if has("gui_macvim")
     set guifont=Monaco:h16
     set undofile
     set undodir=~/.vimundo
 endif
-set number
-set background=dark
-colorscheme solarized
 
-let g:fzf_tags_command = 'ctags -R'
 "===================
 " mappings
 "===================
@@ -74,7 +55,7 @@ let mapleader = ","
 map <Leader>gs :Gstatus<CR>
 map <Leader>f :Files<CR>
 map <Leader>vi :tabe ~/.vimrc<CR>
-map <Leader>n :call RenameFile()<cr>
+map <Leader>vs :source ~/.vimrc<CR>
 map <Leader>, :NERDTreeFind<CR>
 map <Leader>/  <plug>NERDCommenterToggle<cr>
 nmap <leader>a :Ack
@@ -170,9 +151,6 @@ if executable('ag')
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
-
-" terraform
-let g:terraform_fold_sections=1
 
 "===============
 " auto commands

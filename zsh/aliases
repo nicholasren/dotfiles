@@ -30,4 +30,5 @@ alias pg_stop="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/serv
 
 alias d="docker"
 alias g="./gradlew"
+alias m="mvim ."
 
