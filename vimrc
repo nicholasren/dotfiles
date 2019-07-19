@@ -53,13 +53,13 @@ let mapleader = ","
 
 map <Leader>gs :Gstatus<CR>
 map <Leader>f :Files<CR>
-map <Leader>vi :tabe ~/.vimrc<CR>
+map <Leader>vi :e ~/.vimrc<CR>
 map <Leader>vs :source ~/.vimrc<CR>
 map <Leader>, :NERDTreeFind<CR>
 map <Leader>/  <plug>NERDCommenterToggle<cr>
 nmap <leader>a :Ack
 map <Leader>h :noh<cr>
-nnoremap <leader>r :w<CR>:! ruby %<CR>
+map <leader>r :w<CR>:QuickRun<CR>
 " copy the file path to buffer
 map <silent> <Leader>c :let @+ = expand("%")<cr>
 
@@ -86,6 +86,7 @@ nmap j gj
 nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 
+inoremap jj <esc>
 
 " ============
 " settings
