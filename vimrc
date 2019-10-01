@@ -24,14 +24,13 @@ Plugin 'honza/vim-snippets'
 Plugin 'elzr/vim-json'
 Plugin 'airblade/vim-gitgutter'
 
+Plugin 'ruby.vim'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-rbenv'
+Plugin 'tpope/vim-bundler'
+
 " file finder
 Plugin 'ctrlpvim/ctrlp.vim'
-
-"vim-syntastic
-"auto-format
-"thinca/vim-quickrun
-"junegunn/vim-easy-align
-"t9md/vim-quickhl
 
 
 " ===============
@@ -39,7 +38,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 " ===============
 set number
 colorscheme solarized
-set background=light
+set background=dark
 if has("gui_macvim")
     set guifont=Monaco:h16
     set undofile
@@ -157,6 +156,7 @@ endif
 "===============
 if has("autocmd")
   autocmd FileType text setlocal textwidth=78
+  autocmd BufNewFile,BufRead *.hcl,*.tf,&.tfvars set filetype=tf
   autocmd BufNewFile,BufRead *.scala,*.sbt set filetype=scala
   autocmd BufNewFile,BufRead *.gradle,*.groovy set filetype=groovy
   autocmd BufNewFile,BufRead *_spec.rb set filetype=ruby.rspec

@@ -1,6 +1,7 @@
 #PATH configure section
 export MVIM_HOME="/Applications/MacVim.app/contents"
 
+export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 export PATH=~/bin:$PATH
 export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$PATH
 export PATH=$HASKELL_HOME/bin:$PATH
