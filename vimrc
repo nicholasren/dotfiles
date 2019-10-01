@@ -12,12 +12,9 @@ Plugin 'tpope/vim-repeat'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'koron/nyancat-vim'
 Plugin 'itchyny/lightline.vim'
-
 Plugin 'Townk/vim-autoclose'
 Plugin 'The-NERD-tree'
 Plugin 'mileszs/ack.vim'
-Plugin 'tpope/vim-markdown'
-Plugin 'molokai'
 Plugin 'Yggdroot/indentLine'
 Plugin 'rizzatti/funcoo.vim'
 Plugin 'honza/vim-snippets'
@@ -28,6 +25,9 @@ Plugin 'ruby.vim'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-rbenv'
 Plugin 'tpope/vim-bundler'
+Plugin 'thinca/vim-quickrun'
+Plugin 'junegunn/vim-easy-align'
+Plugin 't9md/vim-quickhl'
 
 " file finder
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -114,7 +114,7 @@ set gdefault " assume the /g flag on :s substitutions to replace all matches in 
 set autoindent " always set autoindenting on
 set tags=./tags; " Set the tag file search order
 set grepprg=ack " Use Ack instead of grep
-set noesckeys " Get rid of the delay when hitting esc!
+"set noesckeys " Get rid of the delay when hitting esc!
 set shiftround " When at 3 spaces and I hit >>, go to 4, not 5.
 set hlsearch
 set list
@@ -132,7 +132,7 @@ set wildmenu
 set wildmode=list:full
 
 " (Hopefully) removes the delay when hitting esc in insert mode
-set noesckeys
+"set noesckeys
 set ttimeout
 set ttimeoutlen=1
 
@@ -167,3 +167,12 @@ if has("autocmd")
   au FocusLost * :wa
   au FileType puppet setlocal isk+=:
 endif
+
+
+ let g:quickrun_config = {
+  \   'javascript': {
+  \     'type': 'javascript',
+  \     'exec':  "node %s",
+  \     'hook/shebang/enable': 0,
+  \   },
+  \ }

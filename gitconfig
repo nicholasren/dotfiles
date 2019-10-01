@@ -3,6 +3,7 @@
 	email = nicholas.x.ren@gmail.com
 [alias]
 	co = checkout
+        cp = cherry-pick
 	st = status
 	ci = commit
         cleanup = !git remote prune origin && git gc && git clean -df && git stash clear

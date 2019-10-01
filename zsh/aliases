@@ -33,14 +33,9 @@ alias g="./gradlew"
 alias m="mvim ."
 
 alias tfinit="terraform init"
-#alias tfplan="terraform plan --var-file=../terraform.tfva-rvn  /Volumes/LaCie/Capture\ One/ /Volumes/Backup/s -out plan.out"
-#alias tfapply="terraform apply -auto-approve plan.out"
 alias tfplan="terraform plan --var-file=../terraform.tfvars"
 alias tfapply="terraform apply --var-file=../terraform.tfvars"
 alias tfdestroy="terraform destroy --var-file=../terraform.tfvars"
-
-function b () {
-  iterm2_set_user_var badge $1
-}
+alias b="iterm2_set_user_var badge"
 
 alias backup_photos="rsync -rv  /Volumes/LaCie/Capture\ One/ /Volumes/Backup/Capture\ One/"

@@ -1,5 +1,6 @@
 #PATH configure section
 export MVIM_HOME="/Applications/MacVim.app/contents"
+export CONFLUENT_HOME="/Users/xiaojun.ren/services/confluent-5.2.2"
 
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 export PATH=~/bin:$PATH
@@ -12,3 +13,5 @@ export PATH=$TGENV_HOME/bin:$PATH
 export PATH=$BLUEPRINT_HOME/bin:$PATH
 export PATH=$HOME/bin:$PATH
 export PATH=$MVIM_HOME/bin:$PATH
+export PATH=$CONFLUENT_HOME/bin:$PATH
+
