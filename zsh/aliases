@@ -38,4 +38,4 @@ alias tfapply="terraform apply --var-file=../terraform.tfvars"
 alias tfdestroy="terraform destroy --var-file=../terraform.tfvars"
 alias b="iterm2_set_user_var badge"
 
-alias backup_photos="rsync -rv  /Volumes/LaCie/Capture\ One/ /Volumes/Backup/Capture\ One/"
+alias backup_photos="rsync -rv --delete /Volumes/LaCie/Capture\ One/Photo\ Warehouse/2019 /Volumes/Backup/Capture\ One/Photo\ Warehouse"

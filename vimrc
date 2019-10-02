@@ -38,7 +38,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 " ===============
 set number
 colorscheme solarized
-set background=dark
+set background=light
 if has("gui_macvim")
     set guifont=Monaco:h16
     set undofile
